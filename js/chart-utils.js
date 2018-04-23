@@ -8,6 +8,7 @@ window.chartColors = {
 	yellow: 'rgb(255, 205, 86)',
 	green: 'rgb(26, 188, 156)',
 	blue: 'rgb(54, 162, 235)',
+	indigo: 'rgb(0, 51, 102)',
 	purple: 'rgb(153, 102, 255)',
 	grey: 'rgb(201, 203, 207)'
 };
