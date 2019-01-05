@@ -37,7 +37,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Leads | Tao Management</title>
+	<title>Partner Referral | Tao Management</title>
 	
 <style>
 .chart-samples ul { list-style: none; }
@@ -132,7 +132,7 @@
 		<section id="page-title">
 
 			<div class="container clearfix">
-				<h1>Relationship Management</h1>
+				<h1>Partner Management</h1>
 				<span>Solution Architect Consulting</span>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -214,10 +214,15 @@
 								<div class="col_one_fourth">
 									<button class="button button-3d nomargin" type="submit" id="submit" name="submit" value="Send">Send Message</button>
 								</div>
-								<div class="col_three_fourth col_last">
-								<label for="yesleadgen">Send Intro Message to Contact</label>   <input type="radio" id="yesleadgen" name="leadgen" value="1"><br>
+								<div class="col_one_third ">
+								<label for="yesleadgen">Send Intro Message</label>   <input type="radio" id="yesleadgen" name="leadgen" value="1"><br>
 								<label for="noleadgen">None</label>   <input type="radio" id="noleadgen" name="leadgen" value="0" checked>
 								</div>
+
+								<div class="col_one_third col_last">
+									<input type="partner" id="partner" name="partner" value="" placeholder="Partner Email" class="sm-form-control" />
+								</div>
+
 								<input type="text" name="_gotcha" style="display:none" />
 								
 								<input type="hidden" name="website" value="TaoMgt Lead" />
