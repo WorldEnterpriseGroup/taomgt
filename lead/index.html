@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="../css/dark.css" type="text/css" />
 	<link rel="stylesheet" href="../css/swiper.css" type="text/css" />
 
+
 	<!-- Business Demo Specific Stylesheet -->
 	<link rel="stylesheet" href="../demos/business/business.css" type="text/css" />
 	<link rel="stylesheet" href="../demos/business/css/fonts.css" type="text/css" />
@@ -59,6 +60,17 @@
 </head>
 
 <body class="stretched">
+
+	<!-- Facebook Link for Bookings
+	============================================= -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=301415863268294&autoLogAppEvents=1';
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 
 	<!-- Document Wrapper
 	============================================= -->
@@ -230,38 +242,11 @@
 
 						<div class="widget noborder notoppadding">
 
-							<a href="#" class="social-icon si-small si-dark si-facebook">
-								<i class="icon-facebook"></i>
-								<i class="icon-facebook"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-dark si-twitter">
-								<i class="icon-twitter"></i>
-								<i class="icon-twitter"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-dark si-dribbble">
-								<i class="icon-dribbble"></i>
-								<i class="icon-dribbble"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-dark si-forrst">
-								<i class="icon-forrst"></i>
-								<i class="icon-forrst"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-dark si-pinterest">
-								<i class="icon-pinterest"></i>
-								<i class="icon-pinterest"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-dark si-gplus">
-								<i class="icon-gplus"></i>
-								<i class="icon-gplus"></i>
-							</a>
-
+						<div class="center fb-share-button" data-href="https://outlook.office365.com/owa/calendar/TaoMgtConsulting&#064;taomgt.com/bookings/" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Foutlook.office365.com%2Fowa%2Fcalendar%2FTaoMgtConsulting%40taomgt.com%2Fbookings%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 						</div>
-
+						<br<br>
+						<div class="widget heading-block"><h3><em>“All progress takes place outside the comfort zone.”</em></h3></div>
+						<a href="mailto:?subject=Let's%20Talk%20Business">Send an Email</a>
 					</div><!-- .sidebar end -->
 
 				</div>
