@@ -18,7 +18,9 @@
 	<link rel="stylesheet" href="../demos/business/business.css" type="text/css" />
 	<link rel="stylesheet" href="../demos/business/css/fonts.css" type="text/css" />
 	<!-- / -->
-
+	<link rel="stylesheet" href="../css/components/ion.rangeslider.css" type="text/css" />
+	<link rel="stylesheet" href="../css/components/bs-switches.css" type="text/css" />
+	<link rel="stylesheet" href="../css/components/radio-checkbox.css" type="text/css" />
 	<link rel="stylesheet" href="../css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="../css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="../css/magnific-popup.css" type="text/css" />
@@ -57,6 +59,25 @@
 .chart-samples li a:not(:hover) { color: #AAA; }
 </style>
 
+<style>
+
+	.white-section {
+		background-color: #FFF;
+		padding: 25px 20px;
+		-webkit-box-shadow: 0px 1px 1px 0px #dfdfdf;
+		box-shadow: 0px 1px 1px 0px #dfdfdf;
+		border-radius: 3px;
+	}
+
+	.white-section label { margin-bottom: 30px; }
+
+	.dark .white-section {
+		background-color: #333;
+		-webkit-box-shadow: 0px 1px 1px 0px #444;
+		box-shadow: 0px 1px 1px 0px #444;
+	}
+
+</style>
 </head>
 
 <body class="stretched">
@@ -155,8 +176,8 @@
 					<!-- Postcontent
 					============================================= -->
 					<div class="postcontent nobottommargin">
-
-						<h3>Suggest a Client</h3>
+					
+						
 
 						<div class="contact-widget">
 
@@ -165,25 +186,36 @@
 							<form id="template-contactform" name="template-contactform" class="nobottommargin"  action="https://prod-06.centralus.logic.azure.com:443/workflows/af46420b1fdb4385b32484fcf8ded45c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=5MISIUOWM4_JmgwKBd4RI3rgsNtA25Cf_Fn2FsFVlGQ" method="POST">
 
 								<div class="form-process"></div>
-
+								
+								<div class="col_two_third"><h3>Suggest a Client </h3></div>
+								
+								<div class="col_one_third center col_last">
+								
+								<div class="btn-group btn-group-sm" role="group" aria-label="Form Size">
+									<button type="button" class="btn btn-secondary selected" id="basic">Basic</button>
+									<button type="button" class="btn btn-secondary" id="medium">Medium</button>
+									<button type="button" class="btn btn-secondary" id="showall">Advanced</button>
+								</div>
+								</div>
+								
 								<div class="col_one_third">
-									<label for="name">First Name <small>*</small></label>
+									<label for="firstname">First Name <small>*</small></label>
 									<input type="text" id="firstname" name="firstname" value="" class="sm-form-control required" />
 								</div>
 
 								<div class="col_one_third">
-									<label for="name">Last Name <small>*</small></label>
+									<label for="lastname">Last Name <small>*</small></label>
 									<input type="text" id="lastname" name="lastname" value="" class="sm-form-control required" />
 								</div>
 
 								<div class="col_one_third col_last">
-									<label for="template-contactform-phone">Phone <small>*</small></label>
-									<input type="text" id="template-contactform-phone" name="phone" value="" class="required sm-form-control" />
+									<label for="tel">Phone</label>
+									<input type="tel" id="tel" name="tel" value="" class="sm-form-control" />
 								</div>
 
 								<div class="col_two_third ">
-									<label for="email">Email <small>*</small></label>
-									<input type="email" id="email" name="email" value="" class="required email sm-form-control" />
+									<label for="email">Email</label>
+									<input type="email" id="email" name="email" value="" class="email sm-form-control" />
 								</div>
 
 								
@@ -201,6 +233,43 @@
 									</select>
 								</div>
 
+								<div class="collapse collapse2" id="toggleMedium">
+									
+									<div class="col_one_third">
+										<label for="company">Company</label>
+										<input type="text" id="company" name="company" value="" class="sm-form-control required" />
+									</div>
+									<div class="col_one_third">
+										<label for="socialmedia">Social Media</label>
+										<div class="fright clearfix">
+										<a href="#" class="social-icon si-mini si-borderless si-facebook">
+											<i class="icon-facebook"></i>
+											<i class="icon-facebook"></i>
+										</a>
+										<a href="#" class="social-icon si-mini si-borderless  si-twitter">
+											<i class="icon-twitter"></i>
+											<i class="icon-twitter"></i>
+										</a>
+										<a href="#" class="social-icon si-mini si-borderless  si-instagram">
+											<i class="icon-instagram"></i>
+											<i class="icon-instagram"></i>
+										</a>
+										</div>
+										<input type="text" id="socialmedia" name="socialmedia" value="" placeholder="Social Media" class="sm-form-control" />
+									</div>
+
+									<div class="col_one_third col_last">
+										<label class="nobottommargin" for="budget">Budget</label>
+										<input id="budget" name="budget" class="budgetrange"  />
+									</div>
+									<div class="col_full">
+										<label>After you have filled out the form a few times, please send a suggestion to management on what form fields we are missing on the Medium level.  Thank you.</label>
+									</div>
+								</div>
+
+								<div class="collapse collapse3" id="toggleAdvanced">
+									<label>Discuss with Management Advanced Form Fields you desire to have here.  Thank you.</label>
+								</div>
 
 								<div class="col_full">
 									<label for="template-contactform-message">Message <small>*</small></label>
@@ -210,17 +279,22 @@
 								<div class="col_full hidden">
 									<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
 								</div>
-
+								
 								<div class="col_one_fourth">
 									<button class="button button-3d nomargin" type="submit" id="submit" name="submit" value="Send">Send Message</button>
 								</div>
 								<div class="col_one_third ">
-								<label for="yesleadgen">Send Intro Message</label>   <input type="radio" id="yesleadgen" name="leadgen" value="1"><br>
-								<label for="noleadgen">None</label>   <input type="radio" id="noleadgen" name="leadgen" value="0" checked>
+								<label for="marketing">Marketing  </label>
+								<input class="bt-switch" type="checkbox" name="marketing" data-size="mini">
 								</div>
 
 								<div class="col_one_third col_last">
 									<input type="partner" id="partner" name="partner" value="" placeholder="Partner Email" class="sm-form-control" />
+									<datalist id="partner">
+									<option value="@gmail.com">
+									<option value="@taolearning.org">
+									<option value="@taomgt.com">
+									</datalist>
 								</div>
 
 								<input type="text" name="_gotcha" style="display:none" />
@@ -243,6 +317,7 @@
 							Marietta, OH 45750<br>
 						</address>
 						<abbr title="Phone Number"><strong>Phone:</strong></abbr> (+01) 740-538-0172<br>
+						<abbr title="Fax Number"><strong>Fax:</strong></abbr> (+01) 614-573-0537<br>
 						<abbr title="Email Address"><strong>Email:</strong></abbr> info@taomgt.com
 
 						<div class="widget noborder notoppadding">
@@ -250,8 +325,10 @@
 						<div class="center fb-share-button" data-href="https://outlook.office365.com/owa/calendar/TaoMgtConsulting&#064;taomgt.com/bookings/" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Foutlook.office365.com%2Fowa%2Fcalendar%2FTaoMgtConsulting%40taomgt.com%2Fbookings%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 						</div>
 						<br<br>
-						<div class="widget heading-block"><h3><em>“All progress takes place outside the comfort zone.”</em></h3></div>
-						<a href="mailto:?subject=Let's%20Talk%20Business">Send an Email</a>
+						<div class="widget section center heading-block"><h3 class="h3 t700 jackInTheBox animated"><em>“All progress takes place outside the comfort zone.”</em></h3></div>
+						<a class="center" href="mailto:?subject=Let's%20Talk%20Business">Send an Email</a>
+
+
 					</div><!-- .sidebar end -->
 
 				</div>
@@ -279,7 +356,7 @@
 						<div class="clear"></div>
 						<div class="line line-sm"></div>
 						<div class="col_two_third">
-							<small class="t300" style="color: #AAA">Copyrights &copy; 2018 All Rights Reserved by Tao Fruit.</small>
+							<small class="t300" style="color: #AAA">Copyright &copy; 2019 All Rights Reserved by Tao Fruit.</small>
 						</div>
 						<div class="col_one_third col_last">
 							<div class="fright clearfix">
@@ -377,10 +454,44 @@
 			 overviewMapControl: false
 		 }
 
+		});
+
+	</script>
+
+	<!-- Range and Switches Slider Plugin -->
+	<script src="../js/components/rangeslider.min.js"></script>
+	<script src="../js/components/moment.js"></script>
+
+	<script src="../js/components/bs-switches.js"></script>
+	<script>jQuery(".bt-switch").bootstrapSwitch();</script>
+	<script>
+		$(".budgetrange").ionRangeSlider({
+				grid: true,
+				hide_min_max: true,
+				hide_from_to: true,
+				from: 0,
+				values: ['$0', '$10K', '$50K', '$100K', '$500K']
+			});
+	</script>
+	
+	<script>
+	jQuery(function(){
+         jQuery('#showall').click(function(){
+               jQuery('.collapse1').slideDown('slow');
+			   jQuery('.collapse2').slideDown('500').fadeIn( 200 );
+			   jQuery('.collapse3').delay( 300 ).slideDown('slow');
+        });
+		jQuery('#basic').click(function(){
+               jQuery('.collapse2').slideUp('slow');
+			   jQuery('.collapse3').slideUp('slow');
+        });
+		jQuery('#medium').click(function(){
+               jQuery('.collapse2').slideDown('slow');
+			   jQuery('.collapse3').slideUp('slow');
+        });
+       
 	});
 
-</script>
-
-
+	</script>
 </body>
 </html>
