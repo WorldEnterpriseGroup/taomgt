@@ -121,7 +121,7 @@
 
 			<div class="container clearfix">
 				<h1>Relationship Management</h1>
-				<span>Solution Achitect Consulting</span>
+				<span>Solution Architect Consulting</span>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Contact</li>
@@ -199,14 +199,16 @@
 									<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
 								</div>
 
-								<div class="col_full">
+								<div class="col_one_fourth">
 									<button class="button button-3d nomargin" type="submit" id="submit" name="submit" value="Send">Send Message</button>
 								</div>
-								
+								<div class="col_three_fourth col_last">
+								<label for="yesleadgen">Send Intro Message to Contact</label>   <input type="radio" id="yesleadgen" name="leadgen" value="1"><br>
+								<label for="noleadgen">None</label>   <input type="radio" id="noleadgen" name="leadgen" value="0" checked>
+								</div>
 								<input type="text" name="_gotcha" style="display:none" />
 								
-								<input type="hidden" name="leadgen" value="1" />
-								<input type="hidden" name="website" value="TaoMgt" />
+								<input type="hidden" name="website" value="TaoMgt Lead" />
 								<input type="hidden" name="_next" value="//taomgt.com/thanks.html" />
 							</form>
 
@@ -362,7 +364,6 @@
 			},
 		});
 	</script>
-	
 	
 	<script type="text/javascript">
 
