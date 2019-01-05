@@ -78,6 +78,14 @@
 	}
 
 </style>
+
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <script>
+       function onSubmit(token) {
+         document.getElementById("form").submit();
+       }
+     </script>
+
 </head>
 
 <body class="stretched">
@@ -183,7 +191,7 @@
 
 							<div class="contact-form-result"></div>
 
-							<form id="template-contactform" name="template-contactform" class="nobottommargin"  action="https://prod-06.centralus.logic.azure.com:443/workflows/af46420b1fdb4385b32484fcf8ded45c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=5MISIUOWM4_JmgwKBd4RI3rgsNtA25Cf_Fn2FsFVlGQ" method="POST">
+							<form id="TaoForm" name="TaoForm" class="nobottommargin"  action="https://prod-06.centralus.logic.azure.com:443/workflows/af46420b1fdb4385b32484fcf8ded45c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=5MISIUOWM4_JmgwKBd4RI3rgsNtA25Cf_Fn2FsFVlGQ" method="POST">
 
 								<div class="form-process"></div>
 								
@@ -280,6 +288,11 @@
 									<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
 								</div>
 								
+								<div class="col_full">
+									<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+									<div class="g-recaptcha" data-sitekey="6LfijgUTAAAAACPt-XfRbQszAKAJY0yZDjjhMUQT"></div>
+								</div>
+
 								<div class="col_one_fourth">
 									<button class="button button-3d nomargin" type="submit" id="submit" name="submit" value="Send">Send Message</button>
 								</div>
