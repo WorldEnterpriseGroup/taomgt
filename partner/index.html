@@ -138,6 +138,7 @@
 									<li><a href="../services.html#operations"><div>Business Operations</div></a></li>
 									<li><a href="../services.html#property"><div>Property Management</div></a></li>
 									<li><a href="../services.html#logistics"><div>Logistics</div></a></li>
+									<li><a href="../partner/"><div>Solution Architect Meeting</div></a></li>
 								</ul>
 							</li>
 							<li><a href="../about.html"><div>About Us</div></a></li>
@@ -201,7 +202,7 @@
 
 								<div class="form-process"></div>
 								
-								<div class="col_two_third"><h3>Suggest a Client </h3></div>
+								<div class="col_two_third"><h3>Meet with a Solution Architect</h3></div>
 								
 								<div class="col_one_third center col_last">
 								
@@ -214,95 +215,96 @@
 								
 								<div class="col_one_third">
 									<label for="firstname">First Name <small>*</small></label>
-									<input type="text" id="firstname" name="firstname" value="" class="sm-form-control required" />
+									<input tabindex="0" type="text" id="firstname" name="firstname" value="" class="sm-form-control required" />
 								</div>
 
 								<div class="col_one_third">
-									<label for="lastname">Last Name <small>*</small></label>
-									<input type="text" id="lastname" name="lastname" value="" class="sm-form-control required" />
+									<label for="link">Link</label>
+									<div class="fright clearfix">
+										
+									<a href="#" class="social-icon si-mini si-borderless icon-globe">
+										<i class="icon-globe"></i>
+										<i class="icon-globe"></i>
+									</a>
+									<a href="#" class="social-icon si-mini si-borderless si-facebook">
+										<i class="icon-facebook"></i>
+										<i class="icon-facebook"></i>
+									</a>
+									<a href="#" class="social-icon si-mini si-borderless  si-twitter">
+										<i class="icon-twitter"></i>
+										<i class="icon-twitter"></i>
+									</a>
+									<a href="#" class="social-icon si-mini si-borderless  si-instagram">
+										<i class="icon-instagram"></i>
+										<i class="icon-instagram"></i>
+									</a>
+									</div>
+									<input tabindex="1" type="text" id="link" name="link" value="" placeholder="Website or Social Media" class="sm-form-control" />
 								</div>
-
-								<div class="col_one_third col_last">
-									<label for="tel">Phone</label>
-									<input type="tel" id="tel" name="tel" value="" class="sm-form-control" />
-								</div>
-
-								<div class="col_two_third ">
-									<label for="email">Email</label>
-									<input type="email" id="email" name="email" value="" class="email sm-form-control" />
-								</div>
-
 								
 								<div class="col_one_third col_last">
-									<label for="template-contactform-service">Subject</label>
-									<select id="template-contactform-service" name="subject" class="sm-form-control">
-										<option value="">-- Select One --</option>
+									<label for="template-contactform-service">Topic</label>
+									<select tabindex="2" id="template-contactform-service" name="topic" class="sm-form-control">
 										<option value="Invest">Invest</option>
 										<option value="Support">Support</option>
 										<option value="Order">Order</option>
 										<option value="GetInvolved">Get Involved</option>
 										<option value="Careers">Careers</option>
 										<option value="Branding">Branding</option>
+										<option value="Learning" selected="selected">Learning</option>
 										<option value="Other">Other</option>
 									</select>
 								</div>
 
 								<div class="collapse collapse2" id="toggleMedium">
+
+									<div class="col_one_third">
+										<label for="lastname">Last Name <small></small></label>
+										<input type="text" id="lastname" name="lastname" value="" class="sm-form-control" />
+									</div>
+
+									<div class="col_one_third">
+										<label for="email">Email</label>
+										<input type="email" id="email" name="email" value="" class="email sm-form-control" />
+									</div>
+
+									<div class="col_one_third col_last">
+										<label for="tel">Phone</label>
+										<input type="tel" id="tel" name="tel" value="" class="sm-form-control" />
+									</div>
 									
 									<div class="col_one_third">
-										<label for="company">Company</label>
-										<input type="text" id="company" name="company" value="" class="sm-form-control required" />
+										<label for="email">Job Title</label>
+										<input type="text" id="jobtitle" name="jobtitle" value="" class="sm-form-control" />
 									</div>
+	
 									<div class="col_one_third">
-										<label for="socialmedia">Social Media</label>
-										<div class="fright clearfix">
-										<a href="#" class="social-icon si-mini si-borderless si-facebook">
-											<i class="icon-facebook"></i>
-											<i class="icon-facebook"></i>
-										</a>
-										<a href="#" class="social-icon si-mini si-borderless  si-twitter">
-											<i class="icon-twitter"></i>
-											<i class="icon-twitter"></i>
-										</a>
-										<a href="#" class="social-icon si-mini si-borderless  si-instagram">
-											<i class="icon-instagram"></i>
-											<i class="icon-instagram"></i>
-										</a>
-										</div>
-										<input type="text" id="socialmedia" name="socialmedia" value="" placeholder="Social Media" class="sm-form-control" />
+										<label for="company">Company</label>
+										<input type="text" id="company" name="company" value="" class="sm-form-control" />
 									</div>
 
 									<div class="col_one_third col_last">
 										<label class="nobottommargin" for="budget">Budget</label>
 										<input id="budget" name="budget" class="budgetrange"  />
 									</div>
+
 									<div class="col_full">
-										<label>After you have filled out the form a few times, please send a suggestion to management on what form fields we are missing on the Medium level.  Thank you.</label>
+										<label for="template-contactform-message">Message</label>
+										<textarea class="sm-form-control" id="template-contactform-message" name="message" rows="6" cols="30"></textarea>
 									</div>
+
+
 								</div>
 
 								<div class="collapse collapse3" id="toggleAdvanced">
 									<label>Discuss with Management Advanced Form Fields you desire to have here.  Thank you.</label>
 								</div>
 
-								<div class="col_full">
-									<label for="template-contactform-message">Message <small>*</small></label>
-									<textarea class="required sm-form-control" id="template-contactform-message" name="message" rows="6" cols="30"></textarea>
-								</div>
-
 								<div class="col_full hidden">
 									<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
 								</div>
 
-								<div class="col_one_fourth">
-									<button class="button button-3d nomargin" type="submit" id="TaoSubmit" name="submit" value="Send">Send Message</button>
-								</div>
-								<div class="col_one_third ">
-								<label for="marketing">Marketing  </label>
-								<input class="bt-switch" type="checkbox" name="marketing" data-size="mini">
-								</div>
-
-								<div class="col_one_third col_last">
+								<div class="col_one_third">
 									<input type="partner" id="partner" name="partner" value="" placeholder="Partner Email" class="sm-form-control" />
 									<datalist id="partner">
 									<option value="@gmail.com">
@@ -310,6 +312,16 @@
 									<option value="@taomgt.com">
 									</datalist>
 								</div>
+
+								<div class="col_one_third ">
+								<label for="marketing">Marketing  </label>
+								<input class="bt-switch" type="checkbox" name="marketing" data-size="mini">
+								</div>
+
+								<div class="col_one_third col_last">
+									<button class="button button-3d nomargin" type="submit" id="TaoSubmit" name="submit" value="Send">Send Message</button>
+								</div>
+								
 
 								 <div class="g-recaptcha"
 									data-sitekey="6LcHIYcUAAAAAPnqH0iBwnDeFma0mWAMJKJHAoEO"
@@ -322,9 +334,39 @@
 								
 								<input type="hidden" name="website" value="TaoMgt Lead" />
 								<input type="hidden" name="_next" value="//taomgt.com/thanks.html" />
+
+								<div class="col_full collapse4" id="toggleInspiration">
+									<br><br>
+									<div class="col_one_half">
+
+										<div class="heading-block fancy-title nobottomborder title-bottom-border">
+											<h4><span>Tao</span> Process</h4>
+										</div>
+
+										<p>We bring a tao approach to all we do.  Balance, patience, harmony is the key to success.  Being thankful for our shortcomings. Honoring those who see theirselves as competitors.  We are in business to serve families and communities and remind our staff of that every day.  We see all of life as work, yet we see all of live as play.  We blend the tangible with the intangible and meditate as much as we act.</p>
+
+									</div>
+
+								
+
+									<div class="col_one_half col_last">
+
+										<div class="heading-block fancy-title nobottomborder title-bottom-border">
+											<h4><span>Connect</span> for a Reason.</h4>
+										</div>
+
+										<p>Yes, we build companies, products, and provide services.  At a deeper level, we recognize the dharma that brings us together.  We allow our staff to choose the direction they feel their spirit needs to learn.  If this slows down workflow, it is not our mission to get in the way of the spirit.  We honor the reasons we may flow in and out of each others lives and how our teams have a personality of their own.  There is a divine mission and we are listeners as much as leaders.</p>
+
+									</div>
+
+								</div>
 							</form>
 
+
+					
 						</div>
+
+						
 
 					</div><!-- .postcontent end -->
 
@@ -489,9 +531,14 @@
 		$(".budgetrange").ionRangeSlider({
 				grid: true,
 				hide_min_max: true,
-				hide_from_to: true,
+				min: 0,
+				max: 250000,
 				from: 0,
-				values: ['$0', '$10K', '$50K', '$100K', '$500K']
+				step: 5000,
+				prettify_separator: ",",
+				prettify_enabled: true,
+				prefix: "$",
+				max_postfix: "+"
 			});
 	</script>
 	
@@ -505,10 +552,13 @@
 		jQuery('#basic').click(function(){
                jQuery('.collapse2').slideUp('slow');
 			   jQuery('.collapse3').slideUp('slow');
+			   jQuery('.collapse4').slideDown('slow');
         });
 		jQuery('#medium').click(function(){
-               jQuery('.collapse2').slideDown('slow');
-			   jQuery('.collapse3').slideUp('slow');
+            	jQuery('.collapse2').slideDown('slow');
+				jQuery('.collapse4').slideUp('slow');
+				jQuery('.collapse3').slideUp('slow');
+
         });
        
 	});
