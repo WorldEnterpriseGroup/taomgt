@@ -613,7 +613,7 @@
 }
 
 .pricing--karma .pricing--item--featured .pricing--price::after {
-	background: url('http://tympanus.net/Development/PricingTablesInspiration/img/stamp.png');
+	background: url('https://tympanus.net/Development/PricingTablesInspiration/img/stamp.png');
 	background-size: cover;
 	content: '';
 	position: absolute;
@@ -788,7 +788,7 @@
 	font-weight: bold;
 	font-size: 1.8em;
 	padding: 0 0 0.5em;
-	background: url('http://tympanus.net/Development/PricingTablesInspiration/img/line.png') no-repeat 50% 100%;
+	background: url('https://tympanus.net/Development/PricingTablesInspiration/img/line.png') no-repeat 50% 100%;
 }
 
 .pricing--dawa .pricing--price {

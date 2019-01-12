@@ -1,12 +1,12 @@
 /**
  * jquery.calendario.js v1.0.0
- * http://www.codrops.com
+ * https://www.codrops.com
  *
  * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
+ * https://www.opensource.org/licenses/mit-license.php
  *
  * Copyright 2012, Codrops
- * http://www.codrops.com
+ * https://www.codrops.com
  */
 ;( function( $, window, undefined ) {
 
@@ -88,7 +88,7 @@
 			} );
 
 		},
-		// Calendar logic based on http://jszen.blogspot.pt/2007/03/how-to-build-simple-calendar-with.html
+		// Calendar logic based on https://jszen.blogspot.pt/2007/03/how-to-build-simple-calendar-with.html
 		_generateTemplate : function( callback ) {
 
 			var head = this._getHead(),
@@ -203,7 +203,7 @@
 			return html;
 
 		},
-		// based on http://stackoverflow.com/a/8390325/989439
+		// based on https://stackoverflow.com/a/8390325/989439
 		_isValidDate : function( date ) {
 
 			date = date.replace(/-/gi,'');

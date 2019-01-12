@@ -530,7 +530,7 @@ var SEMICOLON = SEMICOLON || {};
 			}
 
 			$("#content,#footer,.slider-element:not(.revslider-wrap),.landing-offer-media,.portfolio-ajax-modal,.mega-menu-column").fitVids({
-				customSelector: "iframe[src^='http://www.dailymotion.com/embed'], iframe[src*='maps.google.com'], iframe[src*='google.com/maps']",
+				customSelector: "iframe[src^='https://www.dailymotion.com/embed'], iframe[src*='maps.google.com'], iframe[src*='google.com/maps']",
 				ignore: '.no-fv'
 			});
 		},
