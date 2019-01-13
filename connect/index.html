@@ -269,7 +269,7 @@
 								
 								<div class="col_one_third">
 									<label for="firstname">First Name <small>*</small></label>
-									<input tabindex="0" type="text" id="firstname" name="firstname" value="" class="sm-form-control required" />
+									<input tabindex="1" type="text" id="firstname" name="firstname" value="" class="sm-form-control required" />
 								</div>
 
 								<div class="col_one_third">
@@ -293,18 +293,23 @@
 										<i class="icon-instagram"></i>
 									</a>
 									</div>
-									<input tabindex="1" type="text" id="link" name="link" value="" placeholder="Website or Social Media" class="sm-form-control" />
+									<input tabindex="2" type="text" id="link" name="link" value="" placeholder="Website or Social Media" class="sm-form-control" />
 								</div>
 								
 								<div class="col_one_third col_last">
 									<label for="template-contactform-service">Topic</label>
-									<select tabindex="2" id="template-contactform-service" name="topic" class="sm-form-control">
+									<select tabindex="3" id="template-contactform-service" name="topic" class="sm-form-control">
 										<option value="Invest">Invest</option>
 										<option value="Support">Support</option>
 										<option value="Order">Order</option>
-										<option value="GetInvolved">Get Involved</option>
+										<option value="Get Involved">Get Involved</option>
 										<option value="Careers">Careers</option>
+										<option value="IT">IT Development</option>
+										<option value="Real Estate">Real Estate</option>
+										<option value="Cyber Security">Cyber Security</option>
+										<option value="Management">Management</option>
 										<option value="Branding">Branding</option>
+										<option value="Philanthropy">Philanthropy</option>
 										<option value="Learning" selected="selected">Learning</option>
 										<option value="Other">Other</option>
 									</select>
@@ -314,37 +319,37 @@
 
 									<div class="col_one_third">
 										<label for="lastname">Last Name <small></small></label>
-										<input type="text" id="lastname" name="lastname" value="" class="sm-form-control" />
+										<input tabindex="4" type="text" id="lastname" name="lastname" value="" class="sm-form-control" />
 									</div>
 
 									<div class="col_one_third">
 										<label for="email">Email</label>
-										<input type="email" id="email" name="email" value="" class="email sm-form-control" />
+										<input tabindex="5" type="email" id="email" name="email" value="" class="email sm-form-control" />
 									</div>
 
 									<div class="col_one_third col_last">
 										<label for="tel">Phone</label>
-										<input type="tel" id="tel" name="tel" value="" class="sm-form-control" />
+										<input tabindex="6" type="tel" id="tel" name="tel" value="" class="sm-form-control" />
 									</div>
 									
 									<div class="col_one_third">
 										<label for="email">Job Title</label>
-										<input type="text" id="jobtitle" name="jobtitle" value="" class="sm-form-control" />
+										<input tabindex="7" type="text" id="jobtitle" name="jobtitle" value="" class="sm-form-control" />
 									</div>
 	
 									<div class="col_one_third">
 										<label for="company">Company</label>
-										<input type="text" id="company" name="company" value="" class="sm-form-control" />
+										<input tabindex="8" type="text" id="company" name="company" value="" class="sm-form-control" />
 									</div>
 
 									<div class="col_one_third col_last">
 										<label class="nobottommargin" for="budget">Budget</label>
-										<input id="budget" name="budget" class="budgetrange"  />
+										<input tabindex="9" id="budget" name="budget" class="budgetrange"  />
 									</div>
 
 									<div class="col_full">
 										<label for="template-contactform-message">Message</label>
-										<textarea class="sm-form-control" id="template-contactform-message" name="message" rows="6" cols="30"></textarea>
+										<textarea tabindex="10" class="sm-form-control" id="template-contactform-message" name="message" rows="6" cols="30"></textarea>
 									</div>
 
 
@@ -355,11 +360,11 @@
 								</div>
 
 								<div class="col_full hidden">
-									<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+									<input tabindex="11" type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
 								</div>
 
 								<div class="col_one_third">
-									<input type="partner" id="partner" name="partner" value="" placeholder="Partner Email" class="sm-form-control" />
+									<input tabindex="12" type="partner" id="partner" name="partner" value="" placeholder="Partner Email" class="sm-form-control" />
 									<datalist id="partner">
 									<option value="@gmail.com">
 									<option value="@taolearning.org">
@@ -369,11 +374,11 @@
 
 								<div class="col_one_third ">
 								<label for="marketing">Marketing  </label>
-								<input class="bt-switch" type="checkbox" name="marketing" data-size="mini">
+								<input tabindex="13" class="bt-switch" type="checkbox" name="marketing" data-size="mini">
 								</div>
 
 								<div class="col_one_third center col_last">
-									<button class="button button-3d nomargin" type="submit" id="TaoSubmit" name="submit" value="Send">Submit Info</button>
+									<button tabindex="14" class="button button-3d nomargin" type="submit" id="TaoSubmit" name="submit" value="Send">Submit Info</button>
 								</div>
 								
 
@@ -395,7 +400,7 @@
 							
 									<div class="col_one_half" id="discover">
 										<div class="heading-block fancy-title nobottomborder title-bottom-border">
-											<a href="https://thefocushive.com" target="_blank"><h4><div class="i-rounded i-alt i-small  bgcolor">2</div>Book a <span>Discovery</span> Session</h4></a>
+											<a href="https://outlook.office365.com/owa/calendar/TaoMgtConsulting@taomgt.com/bookings/" target="_blank"><h4><div class="i-rounded i-alt i-small  bgcolor">2</div>Book a <span>Discovery</span> Session</h4></a>
 										</div>
 
 										<div class="col_two_third">
@@ -406,14 +411,14 @@
 										</div>
 									</div>
 
-									<div class="col_full center" id="focus">
+									<div class="col_full" id="focus">
 										<div class="heading-block fancy-title nobottomborder title-bottom-border">
 											<a href="https://thefocushive.com" target="_blank"><h4><div class="i-rounded i-alt i-small  bgcolor">3</div>Join <span>Focus</span> Hive</h4></a>
 										</div>
 										<div class="col_two_third">
 										<p>When you embrace Hive Mentality, you invigorate a new culture in the workplace.  Whether you are growing your business, adopting new developments, or seeking career opportunities - the Focus Hive is a thriving community for all business-minded people.  Join today to see what it can do for you.</p>
 										</div>
-										<div class="one_third col_last">
+										<div class="one_third col_last center">
 											<br>
 										<a href="https://thefocushive.com" target="_blank" class="button button-rounded button-reveal  button-border tright"><i class="icon-globe"></i><span>Join the Hive</span></a><br>
 										</div>
