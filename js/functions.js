@@ -3050,8 +3050,8 @@ var SEMICOLON = SEMICOLON || {};
 				notifyTimeout = notifyElement.attr('data-notify-timeout'),
 				notifyCloseButton = notifyElement.attr('data-notify-close');
 
-			if( !notifyPosition ) { notifyPosition = 'toast-top-right'; } else { notifyPosition = 'toast-' + notifyElement.attr('data-notify-position'); }
-			if( !notifyMsg ) { notifyMsg = 'Please set a message!'; }
+			if( !notifyPosition ) { notifyPosition = 'toast-top-center'; } else { notifyPosition = 'toast-' + notifyElement.attr('data-notify-position'); }
+			if( !notifyMsg ) { notifyMsg = '<div style="text-align: center">Your Message has been received.<br>Tao Mgt will be in touch.<br> Thank you</div>'; }
 			if( !notifyTimeout ) { notifyTimeout = 5000; }
 			if( notifyCloseButton == 'true' ) { notifyCloseButton = true; } else { notifyCloseButton = false; }
 
@@ -3173,7 +3173,7 @@ var SEMICOLON = SEMICOLON || {};
 
 						$(form).ajaxSubmit({
 							target: elementResult,
-							dataType: 'json',
+							// dataType: 'json',
 							success: function( data ) {
 								if( elementLoader == 'button' ) {
 									defButton.html( defButtonText );
