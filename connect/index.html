@@ -18,6 +18,8 @@
 	<link rel="stylesheet" href="../demos/business/business.css" type="text/css" />
 	<link rel="stylesheet" href="../demos/business/css/fonts.css" type="text/css" />
 	<!-- / -->
+	<!-- Star Rating CSS -->
+	<link rel="stylesheet" href="../css/components/bs-rating.css" type="text/css" />
 	<link rel="stylesheet" href="../css/components/ion.rangeslider.css" type="text/css" />
 	<link rel="stylesheet" href="../css/components/bs-switches.css" type="text/css" />
 	<link rel="stylesheet" href="../css/components/radio-checkbox.css" type="text/css" />
@@ -250,6 +252,40 @@
 								</div>
 
 								<div class="col_one_third">
+									<label for="lastname">Last Name <small></small></label>
+									<input tabindex="2" type="text" id="lastname" name="lastname" value="" class="sm-form-control" />
+								</div>
+								
+								<div class="col_one_third col_last">
+									<label for="email">Email</label>
+									<input tabindex="3" type="email" id="email" name="email" value="" class="email sm-form-control" />
+								</div>
+
+								<div class="col_one_third">
+									<label for="topic">Topic <small>*</small></label>
+									<input tabindex="4" type="text" id="topic" name="topic" value="" class="sm-form-control required" />
+								</div>
+
+								<div class="col_one_third">
+									<label for="template-contactform-service">Category</label>
+									<select tabindex="5" id="template-contactform-service" name="category" class="sm-form-control">
+										<option value="8d9bcf28-b720-e911-a94f-000d3a3b9b3d">Invest with Us</option>
+										<option value="209d6367-b620-e911-a94f-000d3a3b9b3d">Get Support</option>
+										<option value="b87cb776-b720-e911-a94f-000d3a3b9b3d">Order Information</option>
+										<option value="4867df17-4920-e911-a94f-000d3a3b9b3d">Get Involved</option>
+										<option value="6258423b-b720-e911-a94f-000d3a3b9b3d">Careers</option>
+										<option value="72d11b5b-b720-e911-a94f-000d3a3b9b3d">IT Development</option>
+										<option value="e6366961-b720-e911-a94f-000d3a3b9b3d">Real Estate</option>
+										<option value="72d11b5b-b720-e911-a94f-000d3a3b9b3d">Cyber Security</option>
+										<option value="81f19022-b720-e911-a94f-000d3a3b9b3d" selected="selected">Management</option>
+										<option value="Branding">Branding & Advertising</option>
+										<option value="cdca4154-5120-e911-a94f-000d3a3b9b3d">Philanthropy</option>
+										<option value="4867df17-4920-e911-a94f-000d3a3b9b3d">Education</option>
+										<option value="1f67a0f0-0d05-e911-a825-000d3a3722d6">Other</option>
+									</select>
+								</div>
+
+								<div class="col_one_third col_last">
 									<label for="link">Link</label>
 									<div class="fright clearfix">
 										
@@ -270,63 +306,44 @@
 										<i class="icon-instagram"></i>
 									</a>
 									</div>
-									<input tabindex="2" type="text" id="link" name="link" value="" placeholder="Website or Social Media" class="sm-form-control" />
+									<input tabindex="6" type="text" id="link" name="link" value="" placeholder="Website or Social Media" class="sm-form-control" />
 								</div>
 								
-								<div class="col_one_third col_last">
-									<label for="template-contactform-service">Topic</label>
-									<select tabindex="3" id="template-contactform-service" name="topic" class="sm-form-control">
-										<option value="Invest">Invest</option>
-										<option value="Support">Support</option>
-										<option value="Order">Order</option>
-										<option value="Get Involved">Get Involved</option>
-										<option value="Careers">Careers</option>
-										<option value="IT">IT Development</option>
-										<option value="Real Estate">Real Estate</option>
-										<option value="Cyber Security">Cyber Security</option>
-										<option value="Management" selected="selected">Management</option>
-										<option value="Branding">Branding</option>
-										<option value="Philanthropy">Philanthropy</option>
-										<option value="Learning">Learning</option>
-										<option value="Other">Other</option>
-									</select>
-								</div>
-
 								<div class="collapse collapse2" id="toggleMedium">
 
 									<div class="col_one_third">
-										<label for="lastname">Last Name <small></small></label>
-										<input tabindex="4" type="text" id="lastname" name="lastname" value="" class="sm-form-control" />
-									</div>
-
-									<div class="col_one_third">
-										<label for="email">Email</label>
-										<input tabindex="5" type="email" id="email" name="email" value="" class="email sm-form-control" />
-									</div>
-
-									<div class="col_one_third col_last">
 										<label for="tel">Phone</label>
-										<input tabindex="6" type="tel" id="tel" name="tel" value="" class="sm-form-control" />
+										<input tabindex="7" type="tel" id="tel" name="tel" value="" class="sm-form-control" />
 									</div>
 									
 									<div class="col_one_third">
 										<label for="email">Job Title</label>
-										<input tabindex="7" type="text" id="jobtitle" name="jobtitle" value="" class="sm-form-control" />
+										<input tabindex="8" type="text" id="jobtitle" name="jobtitle" value="" class="sm-form-control" />
 									</div>
 	
-									<div class="col_one_third">
+									<div class="col_one_third col_last">
 										<label for="company">Company</label>
-										<input tabindex="8" type="text" id="company" name="company" value="" class="sm-form-control" />
+										<input tabindex="9" type="text" id="company" name="company" value="" class="sm-form-control" />
 									</div>
 
-									<div class="col_one_third col_last">
-										<label class="nobottommargin" for="budget">Budget</label>
-										<input tabindex="9" id="budget" name="budget" class="budgetrange"  />
+									<div class="col_one_third center">
+										<label class="nobottommargin" for="budget">Project Budget</label>
+										<input tabindex="10" id="budget" name="budget" class="budgetrange"  />
+									</div>
+
+									<div class="col_one_third">
+									<label>Interest:</label>
+									<input tabindex="11" id="rating" name="interest" type="number" class="rating" max="3" data-stars="3" data-step="1" data-size="sm">
+									</div>
+
+									<div class="col_one_third center col_last">
+										<label class="nobottommargin" for="revenue">Annual Revenue</label>
+										<input tabindex="12" id="revenue" name="revenue" class="revenuerange"  />
 									</div>
 
 									<div class="col_full">
-										<label for="template-contactform-message">Message</label>
-										<textarea tabindex="10" class="sm-form-control" id="template-contactform-message" name="message" rows="6" cols="30"></textarea>
+										<label for="template-contactform-message">Detailed Information</label>
+										<textarea tabindex="13" class="sm-form-control" id="template-contactform-message" name="information" rows="6" cols="30"></textarea>
 									</div>
 
 								</div>
@@ -336,11 +353,11 @@
 								</div>
 
 								<div class="col_full hidden">
-									<input tabindex="11" type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+									<input tabindex="14" type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
 								</div>
 
 								<div class="col_one_third">
-									<input tabindex="12" type="partner" id="partner" name="partner" value="" placeholder="Partner Email" class="sm-form-control" />
+									<input tabindex="15" type="partner" id="partner" name="partner" value="" placeholder="Partner Email" class="sm-form-control" />
 									<datalist id="partner">
 									<option value="@gmail.com">
 									<option value="@taolearning.org">
@@ -350,11 +367,11 @@
 
 								<div class="col_one_third ">
 								<label for="marketing">Marketing  </label>
-								<input tabindex="13" class="bt-switch" type="checkbox" name="marketing" data-size="mini">
+								<input tabindex="16" class="bt-switch" type="checkbox" name="marketing" data-size="mini">
 								</div>
 
 								<div class="col_one_third center col_last">
-									<button tabindex="14" class="button button-3d nomargin" type="submit" id="TaoSubmit" name="submit" value="Send">Submit Info</button>
+									<button tabindex="17" class="button button-3d nomargin" type="submit" id="TaoSubmit" name="submit" value="Send">Submit Info</button>
 								</div>
 								
 								<div class="g-recaptcha"
@@ -366,7 +383,7 @@
 								<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
 								<input type="text" name="_gotcha" style="display:none" />
 								
-								<input type="hidden" name="website" value="TaoMgt" />
+								<input type="hidden" name="website" value="https://taomgt.com/connect" />
 								<input type="hidden" name="_next" value="//taomgt.com/thanks.html" />
 
 								<div class="col_full" id="toggleInspiration">
@@ -479,6 +496,9 @@
 	============================================= -->
 	<script src="../js/functions.js"></script>
 
+	<!-- Star Rating Plugin -->
+	<script src="../js/components/star-rating.js"></script>
+
 
 	<!-- Range and Switches Slider Plugin -->
 	<script src="../js/components/rangeslider.min.js"></script>
@@ -491,9 +511,31 @@
 				grid: true,
 				hide_min_max: true,
 				min: 0,
-				max: 250000,
+				max: 1000000,
 				from: 0,
-				step: 5000,
+				step: 25000,
+				prettify_separator: ",",
+				prettify_enabled: true,
+				prefix: "$",
+				max_postfix: "+"
+			});
+	</script>
+
+	<script>
+	$("#rating").rating({
+			starCaptions: {0: "Not Rated",1: "Cold", 2: "Warm", 3: "Hot"},
+			starCaptionClasses: {0: "text-danger", 1: "text-info", 2: "text-warning", 3: "text-danger"},
+		});
+	</script>
+
+	<script>
+		$(".revenuerange").ionRangeSlider({
+				grid: true,
+				hide_min_max: true,
+				min: 0,
+				max: 10000000,
+				from: 0,
+				step: 50000,
 				prettify_separator: ",",
 				prettify_enabled: true,
 				prefix: "$",
