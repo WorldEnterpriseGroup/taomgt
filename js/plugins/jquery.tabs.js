@@ -1,4 +1,4 @@
-/*! jQuery UI - v1.12.1 - 2018-01-02
+/*! jQuery UI - v1.12.1 - 2019-01-02
 * https://jqueryui.com
 * Includes: widget.js, keycode.js, unique-id.js, widgets/tabs.js, effect.js, effects/effect-fade.js, effects/effect-slide.js
 * Copyright jQuery Foundation and other contributors; Licensed MIT */
