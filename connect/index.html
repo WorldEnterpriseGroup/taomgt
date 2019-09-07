@@ -127,9 +127,9 @@
 						<ul>
 							<li><a href="https://taomgt.com/services.html"><div>Services</div></a>
 								<ul>
-									<li><a href="../services.html#leadership"><div>Business Operations</div></a></li>
 									<li><a href="../services.html#erp"><div>Enterprise Resource Planning</div></a></li>
-									<li><a href="../services.html#sa"><div>Solution Architecture</div></a></li>
+									<li><a href="../services.html#sa"><div>Solution Artchitecture</div></a></li>
+									<li><a href="../services.html#leadership"><div>Business Operations</div></a></li>
 								</ul>
 							</li>
 							<li><a href="../about.html"><div>About Us</div></a></li>
@@ -512,16 +512,20 @@
 				grid: true,
 				hide_min_max: true,
 				min: 0,
-				max: 20000000,
+				max: 40,
 				from: 0,
-				step: 2500000,
+				step: 1,
 				prettify_separator: ",",
 				prettify_enabled: true,
 				prefix: "$",
-				max_postfix: "+"
+				max_postfix: "+",
+				postfix: "M"
+				// prettify: function (num) {
+				// 	var m = moment(num, "X").locale("ja");
+				// 	return m.format("Do MMMM, LT");
+				// }
 			});
 	</script>
-
 	<script>
 	$("#rating").rating({
 			starCaptions: {0: "Not Rated",1: "Cold", 2: "Warm", 3: "Hot"},
@@ -534,12 +538,13 @@
 				grid: true,
 				hide_min_max: true,
 				min: 0,
-				max: 100000000,
+				max: 999,
 				from: 0,
-				step: 2500000,
+				step: 5,
 				prettify_separator: ",",
 				prettify_enabled: true,
 				prefix: "$",
+				postfix: "M",
 				max_postfix: "+"
 			});
 	</script>
