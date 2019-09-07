@@ -42,7 +42,8 @@
 
 	#header,
 	#header-wrap,
-	#logo img { height: 80px; }
+	#logo img { height: 80px; padding-top: 9px;
+		padding-bottom: 19px; }
 
 	#header.sticky-header:not(.static-sticky),
 	#header.sticky-header:not(.static-sticky) #header-wrap,
