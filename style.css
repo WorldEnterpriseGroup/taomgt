@@ -93,6 +93,7 @@
 /* ----------------------------------------------------------------
 	Bootstrap Adjustments
 -----------------------------------------------------------------*/
+@import 'css/custom.css'; /* KRASHNIK CUSTOMIZATIONS */
 
 @media (min-width: 576px) {
 	.container { max-width: 540px; }
