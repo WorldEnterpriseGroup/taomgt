@@ -242,7 +242,7 @@
 
 							<div id="dream" class="contact-form-result"></div>
 
-							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="https://prod-06.centralus.logic.azure.com:443/workflows/af46420b1fdb4385b32484fcf8ded45c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=5MISIUOWM4_JmgwKBd4RI3rgsNtA25Cf_Fn2FsFVlGQ" method="POST">
+							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="https://prod-01.eastus.logic.azure.com:443/workflows/8a428578d58348b6bb79faadd105be3c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=cNjnAoDbYO6HcBStQnAxY41C72UuqhMy18_KjvpAXr8" method="POST">
 
 								<div class="form-process"></div>
 							
@@ -282,21 +282,21 @@
 
 								<div class="col_one_third">
 									<label for="template-contactform-service">Category</label>
-									<select tabindex="5" id="template-contactform-service" name="category" class="sm-form-control">
-										<option value="8d9bcf28-b720-e911-a94f-000d3a3b9b3d">Invest with Us</option>
-										<option value="f214c43a-c925-e911-a950-000d3a3b9a2b">Mentor Program</option>
-										<option value="209d6367-b620-e911-a94f-000d3a3b9b3d">Get Support</option>
-										<option value="b87cb776-b720-e911-a94f-000d3a3b9b3d">Order Information</option>
-										<option value="4867df17-4920-e911-a94f-000d3a3b9b3d">Get Involved</option>
-										<option value="6258423b-b720-e911-a94f-000d3a3b9b3d">Careers</option>
-										<option value="72d11b5b-b720-e911-a94f-000d3a3b9b3d">IT Development</option>
-										<option value="e6366961-b720-e911-a94f-000d3a3b9b3d">Real Estate</option>
-										<option value="72d11b5b-b720-e911-a94f-000d3a3b9b3d">Cyber Security</option>
-										<option value="81f19022-b720-e911-a94f-000d3a3b9b3d" selected="selected">Business Management</option>
-										<option value="2894eb01-4920-e911-a94f-000d3a3b9b3d">Branding & Advertising</option>
-										<option value="cdca4154-5120-e911-a94f-000d3a3b9b3d">Philanthropy</option>
-										<option value="4867df17-4920-e911-a94f-000d3a3b9b3d">Education</option>
-										<option value="1f67a0f0-0d05-e911-a825-000d3a3722d6">Other</option>
+									<select tabindex="5" id="template-contactform-service" name="interest" class="sm-form-control">
+										<option value="Invest">Invest with Us</option>
+										<option value="Mentor">Mentor Program</option>
+										<option value="Support">Get Support</option>
+										<option value="Order Information">Order Information</option>
+										<option value="Get Involved">Get Involved</option>
+										<option value="Careers">Careers</option>
+										<option value="IT Development">IT Development</option>
+										<option value="Real Estate">Real Estate</option>
+										<option value="Cyber Security">Cyber Security</option>
+										<option value="Business" selected="selected">Business Management</option>
+										<option value="Branding">Branding & Advertising</option>
+										<option value="Philanthropy">Philanthropy</option>
+										<option value="Education">Education</option>
+										<option value="Other">Other</option>
 									</select>
 								</div>
 
@@ -348,7 +348,7 @@
 
 									<div class="col_one_third">
 									<label>Interest:</label>
-									<input tabindex="11" id="rating" name="interest" type="number" class="rating" max="3" data-stars="3" data-step="1" data-size="sm">
+									<input tabindex="11" id="rating" name="rating" type="number" class="rating" max="3" data-stars="3" data-step="1" data-size="sm">
 									</div>
 
 									<div class="col_one_third center col_last">
@@ -388,18 +388,18 @@
 								<div class="col_one_third center col_last">
 									<button tabindex="17" class="button button-3d nomargin" type="submit" id="TaoSubmit" name="submit" value="Send">Submit Info</button>
 								</div>
-								
+					
 								<div class="g-recaptcha"
 									data-sitekey="6LcHIYcUAAAAAPnqH0iBwnDeFma0mWAMJKJHAoEO"
 									data-callback="onSubmit"
 									data-size="invisible">
 								</div>
-
 								<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
 								<input type="text" name="_gotcha" style="display:none" />
-								
-								<input type="hidden" name="website" value="https://taomgt.com/consulting" />
+								<input type="hidden" name="website" value="Tao Mgt" />
 								<input type="hidden" name="_next" value="//taomgt.com/thanks.html" />
+								<input type="hidden" name="test" value="off">
+                            	<input type="hidden" name="owner" value="1fbe138f-30f2-e911-a972-000d3a34e213">
 
 								<div class="col_full" id="toggleInspiration">
 									<br>
