@@ -342,8 +342,8 @@
 									</div>
 
 									<div class="col_one_third center">
-										<label class="nobottommargin" for="budget">Project Budget</label>
-										<input tabindex="10" id="budget" name="budget" class="budgetrange"  />
+										<label class="nobottommargin" for="budgetsmall">Project Budget</label>
+										<input tabindex="10" id="budgetsmall" name="budgetsmall" class="budgetrange" oninput="calculate()"  />
 									</div>
 
 									<div class="col_one_third">
@@ -352,8 +352,8 @@
 									</div>
 
 									<div class="col_one_third center col_last">
-										<label class="nobottommargin" for="revenue">Annual Revenue</label>
-										<input tabindex="12" id="revenue" name="revenue" class="revenuerange"  />
+										<label class="nobottommargin" for="revenuesmall">Annual Revenue</label>
+										<input tabindex="12" id="revenuesmall" name="revenuesmall" class="revenuerange" oninput="calculate()" />
 									</div>
 
 									<div class="col_full">
@@ -384,6 +384,10 @@
 								<label for="marketing">Marketing  </label>
 								<input tabindex="16" class="bt-switch" type="checkbox" name="marketing" data-size="mini">
 								</div>
+
+								<!-- Update Values using Javascript Calculator before Submitting -->
+								<input type="hidden" id="revenue" name="revenue">
+								<input type="hidden" id="budget" name="budget">
 
 								<div class="col_one_third center col_last">
 									<button tabindex="17" class="button button-3d nomargin" type="submit" id="TaoSubmit" name="submit" value="Send">Submit Info</button>
@@ -583,7 +587,13 @@
         });
        
 	});
+	</script>
 
+	<script type="text/javascript">
+		function calculate() {
+			revenue.value = document.getElementById('revenuesmall').value * 1000000;	
+			budget.value = document.getElementById('budgetsmall').value * 1000000;
+		}
 	</script>
 
 </body>
