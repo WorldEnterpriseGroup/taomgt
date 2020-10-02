@@ -7,24 +7,130 @@ let constraints = {
             maximum: 50
         }
     },
-    lastname: {
-        presence: true,
-        length: {
-            minimum: 2,
-            maximum: 50
-        }
-    },
     email: {
         presence: true,
         email: true
-    },
-    topic: {
-        presence: true,
-    },
-    interest: {
-        presence: true,
     }
 };
+
+var locations = $('input:radio[name=location]');
+var work_authorization = $('input:radio[name=work_authorization]');
+var tech_stack_other = $('input#tech_stack_other');
+var have_cto = $('input:radio[name=have_cto]');
+var tech_stack = $('input:checkbox[name=tech_stack]');
+
+
+var other_locations = document.querySelector('input#other_locations');
+var onsite_95_remote = document.querySelector('input#onsite_95_remote');
+var other_work_authorization = document.querySelector('input#other_work_authorization');
+var hiring_categories = document.querySelector('label[for=have_cto]');
+var cto_name = document.querySelector('input#cto_name');
+
+
+var other_tech_stack_input = document.querySelector('input#other_tech_stack');
+
+locations.change(function(){
+    if(this.value.includes('Other')){
+        other_locations.classList.remove('hidden');
+        onsite_95_remote.classList.add('hidden');
+    } else if (this.value.includes("95% Remote Onsite")){
+       onsite_95_remote.classList.remove('hidden');
+       other_locations.classList.add('hidden');
+    } 
+    else{
+        other_locations.classList.add('hidden');
+        onsite_95_remote.classList.add('hidden');
+    }
+});
+
+other_locations.addEventListener('change', function () {
+    change_others_values.bind(this,'Others: ')()
+})
+onsite_95_remote.addEventListener('change', function(){
+    change_others_values.bind(this,'95% Remote Onsite and other as: ')()
+})
+
+function change_others_values(prefixValue){
+    var temp = this.previousElementSibling;
+    temp.value = prefixValue
+    temp.value += " " + this.value;
+}
+
+tech_stack.change(function() {
+    if(!other_tech_stack_input.previousElementSibling.checked){
+        other_tech_stack_input.previousElementSibling.value = 'Others: ';
+        other_tech_stack_input.value =''
+    } 
+})
+
+tech_stack_other.change(function() {
+    other_tech_stack_input.classList.toggle('hidden')
+});
+
+other_tech_stack_input.addEventListener('change',function(){
+    change_others_values.bind(this,'Others: ')()
+})
+
+
+have_cto.change(function() {
+    if(this.value.includes('Yes')) {
+        cto_name.classList.remove('hidden')
+    } else {
+        cto_name.classList.add('hidden')
+    }
+})
+
+work_authorization.change(function() {
+    if(this.value.includes('Other')){
+        other_work_authorization.classList.remove('hidden');
+    } else{
+        other_work_authorization.classList.add('hidden')
+    }
+})
+
+cto_name.addEventListener('change', function () {
+    change_others_values.bind(this, 'Yes, CTO_Name:' )()
+})
+other_work_authorization.addEventListener('change', function () {
+    change_others_values.bind(this, 'Others:')()
+})
+
+
+var check_boxes = ['hiring_categories', 'assistance_type','tech_stack']
+function checkbox_values(check_boxes) {
+    check_boxes.forEach(a => {
+        var inputs = document.querySelectorAll(`input[name=${a}]:checked`);
+        var label = document.querySelector(`label[for=${a}]`);
+        var input_value = '';
+        inputs.forEach((input) => {
+            input_value += input.value +', ';
+        });
+        label.value = input_value ? input_value.slice(0,-2): input_value;
+        if (inputs) {
+
+        }
+    })
+}
+
+var radio_fields = ['financial_stage',
+    'recruitement_type',
+    'have_cto',
+    'upto_role',
+    'is_assistance_required',
+    'assistance_type',
+    'location',
+    'work_authorization',
+    'cloud_stack',
+]
+function radio_fields_values(radio_fields) {
+    radio_fields.forEach(a => {
+        var input = document.querySelector(`input[name=${a}]:checked`);
+        var label = document.querySelector(`label[for=${a}]`);
+        if(input){
+            label.value = input.value;
+        }
+    })
+}
 
 var inputs = document.querySelectorAll("input.sm-form-control, textarea, select.sm-form-control");
 inputs.forEach( input => {
@@ -39,7 +145,12 @@ inputs.forEach( input => {
 var form = document.querySelector("form#template-contactform");
 form.addEventListener("submit", function (ev) {
     ev.preventDefault();
-    handleFormSubmit(form);
+    let a = $("form#template-contactform");
+    console.log(a.serialize());
+    checkbox_values(check_boxes);
+    radio_fields_values(radio_fields)
+    console.log(hiring_categories.value)
+    // handleFormSubmit(form);
 });
 
 //it handles the form submit

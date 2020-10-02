@@ -45,6 +45,9 @@
 	<!-- Document Title
 	============================================= -->
 	<title>Consulting | Tao Mgt</title>
+	<script>
+		
+	</script>
 	
 <style>
 .chart-samples ul { list-style: none; }
@@ -80,6 +83,9 @@
 		background-color: #333;
 		-webkit-box-shadow: 0px 1px 1px 0px #444;
 		box-shadow: 0px 1px 1px 0px #444;
+	}
+	.other_field.hidden{
+		display: none;
 	}
 
 </style>
@@ -165,6 +171,9 @@
 		<section id="content">
 			<div class="content-wrap">
 				<div class="container clearfix">
+					<div id="abc"> My Home & Administration></div>
+
+
 
 					<!-- Sidebar
 					============================================= -->
@@ -225,6 +234,7 @@
 
 					<!-- Postcontent
 					============================================= -->
+
 					<div class="postcontent col_last nobottommargin">
 
 						<div class="contact-widget">
@@ -240,140 +250,492 @@
 											<h4><div class="i-rounded i-alt i-small bgcolor">1</div>Complete <span>Dream </span> Info</h4>
 										</div>
 								
-								<div class="col_one_half center col_last">
 								
-								<div class="btn-group btn-group-sm" id="formsize" role="group" aria-label="Form Size">
-									<button type="button" class="btn btn-secondary" id="basic">Basic</button>
-									<button type="button" class="btn btn-secondary selected" id="medium">Medium</button>
-									<button type="button" class="btn btn-secondary" id="showall">Advanced</button>
-								</div>
-								<label for="formsize">Form Layout</label>
-								</div>
-								
-								<div class="col_one_third">
-									<label for="firstname">First Name <small>*</small></label>
+								<div class="col_half">
+									<label for="firstname">Name of Company <small>*</small></label>
 									<input tabindex="1" type="text" id="firstname" name="firstname" value="" class="sm-form-control required" />
 								</div>
 
-								<div class="col_one_third">
-									<label for="lastname">Last Name <small></small></label>
-									<input tabindex="2" type="text" id="lastname" name="lastname" value="" class="sm-form-control" />
-								</div>
-								
-								<div class="col_one_third col_last">
+								<div class="col_one_third ">
 									<label for="email">Email</label>
 									<input tabindex="3" type="email" id="email" name="email" value="" class="email sm-form-control" />
 								</div>
 
-								<div class="col_one_third">
-									<label for="topic">Topic <small>*</small></label>
-									<input tabindex="4" type="text" id="topic" name="topic" value="" class="sm-form-control required" />
-								</div>
-
-								<div class="col_one_third">
-									<label for="template-contactform-service">Category</label>
-									<select tabindex="5" id="template-contactform-service" name="interest" class="sm-form-control">
-										<option value="Invest">Invest with Us</option>
-										<option value="Mentor">Mentor Program</option>
-										<option value="Support">Get Support</option>
-										<option value="Order Information">Order Information</option>
-										<option value="Get Involved">Get Involved</option>
-										<option value="Careers">Careers</option>
-										<option value="IT Development">IT Development</option>
-										<option value="Real Estate">Real Estate</option>
-										<option value="Cyber Security">Cyber Security</option>
-										<option value="Business" selected="selected">Business Management</option>
-										<option value="Branding">Branding & Advertising</option>
-										<option value="Philanthropy">Philanthropy</option>
-										<option value="Education">Education</option>
-										<option value="Other">Other</option>
-									</select>
-								</div>
-
-								<div class="col_one_third col_last">
-									<label for="link">Link</label>
-									<div class="fright clearfix">
-										
-									<a href="#" class="social-icon si-mini si-borderless icon-globe">
-										<i class="icon-globe"></i>
-										<i class="icon-globe"></i>
-									</a>
-									<a href="#" class="social-icon si-mini si-borderless si-facebook">
-										<i class="icon-facebook"></i>
-										<i class="icon-facebook"></i>
-									</a>
-									<a href="#" class="social-icon si-mini si-borderless  si-twitter">
-										<i class="icon-twitter"></i>
-										<i class="icon-twitter"></i>
-									</a>
-									<a href="#" class="social-icon si-mini si-borderless  si-instagram">
-										<i class="icon-instagram"></i>
-										<i class="icon-instagram"></i>
-									</a>
-									</div>
-									<input tabindex="6" type="text" id="link" name="link" value="" placeholder="Website or Social Media" class="sm-form-control" />
+								<div class="col_half">
+									<label for="lastname">Contact Name <small></small></label>
+									<input tabindex="2" type="text" id="lastname" name="lastname" value="" class="sm-form-control" />
 								</div>
 								
-								<div class="collapse2" id="toggleMedium">
-
-									<div class="col_one_third">
-										<label for="tel">Phone</label>
-										<input tabindex="7" type="tel" id="tel" name="tel" value="" class="sm-form-control" />
-									</div>
-									
-									<div class="col_one_third">
-										<label for="email">Job Title</label>
-										<input tabindex="8" type="text" id="jobtitle" name="jobtitle" value="" class="sm-form-control" />
-									</div>
-	
-									<div class="col_one_third col_last">
-										<label for="company">Company</label>
-										<input tabindex="9" type="text" id="company" name="company" value="" class="sm-form-control" />
-									</div>
-
-									<div class="col_one_third center">
-										<label class="nobottommargin" for="budgetsmall">Project Budget</label>
-										<input tabindex="10" id="budgetsmall" name="budgetsmall" class="budgetrange" oninput="calculate()"  />
-									</div>
-
-									<div class="col_one_third">
-									<label>Interest:</label>
-									<input tabindex="11" id="rating" name="rating" type="number" class="rating" max="3" data-stars="3" data-step="1" data-size="sm">
-									</div>
-
-									<div class="col_one_third center col_last">
-										<label class="nobottommargin" for="revenuesmall">Annual Revenue</label>
-										<input tabindex="12" id="revenuesmall" name="revenuesmall" class="revenuerange" oninput="calculate()" />
-									</div>
-
-									<div class="col_full">
-										<label for="template-contactform-message">Enter More Information if Desired</label>
-										<textarea tabindex="13" class="sm-form-control" id="template-contactform-message" name="information" maxlength="1900" rows="6" cols="30"></textarea>
-									</div>
-
-								</div>
-
-								<div class="collapse collapse3" id="toggleAdvanced">
-									<label>Discuss with Management Advanced Form Fields you desire to have here.  Thank you.</label>
-								</div>
-
-								<div class="col_full hidden">
-									<input tabindex="14" type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-								</div>
 
 								<div class="col_one_third">
-									<input tabindex="15" type="partner" id="partner" name="partner" value="" placeholder="Tao Partner Email" class="sm-form-control" />
-									<datalist id="partner">
-									<option value="@gmail.com">
-									<option value="@taolearning.org">
-									<option value="@taomgt.com">
-									</datalist>
+									<label for="tel">Phone Number</label>
+									<input tabindex="7" type="tel" id="tel" name="tel" value="" class="sm-form-control" />
+								</div>
+								<div class="col_half ml-5">
+									<div class="form-group ">
+										<label class="control-label " for="hiring_categories">
+											1. What Categories are you hiring for?
+										</label>
+										<div class=" ">
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="hiring_categories" type="checkbox" value="Director/Executive" />
+													Director/Executive
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="hiring_categories" type="checkbox" value="Senior Manager" />
+													Senior Manager
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="hiring_categories" type="checkbox" value="Chief Technical Officer" />
+													Chief Technical Officer
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="hiring_categories" type="checkbox" value="Tech Lead" />
+													Tech Lead
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="hiring_categories"  type="checkbox" value="Senior Engineer" />
+													Senior Engineer
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="hiring_categories"  type="checkbox" value="Junior Developer" />
+													Junior Developer
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col_half ml-5">
+									<div class="form-group" id="div_radio">
+										<label class="control-label " for="financial_stage">
+											2. What financial stage are you in?
+										</label>
+										<div class="ml-4">
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="financial_stage" type="radio" value="First Choice" />
+													Just Starting
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="financial_stage" type="radio" value="Seed Round" />
+													Seed Round
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="financial_stage" type="radio" value="Series A" />
+													Series A
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="financial_stage" type="radio" value="Series B" />
+													Series B
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="financial_stage" type="radio" value="Series C" />
+													Series C
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="financial_stage" type="radio" value="IPO" />
+													IPO
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="financial_stage" type="radio" value="Established Company" />
+													Established Company
+												</label>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+								<div class="col-half ml-5">
+									<div class="form-group" id="div_radio">
+										<label class="control-label " for="recruitement_type">
+											3. Are you a 3rd Party recruiter or Direct Hire?
+										</label>
+										<div class="ml-4">
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="recruitement_type" type="radio" value="3rd Party with established relationship with client" />
+													3rd Party with established relationship with client
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="recruitement_type" type="radio" value="3rd Party without established relationship with client " />
+													3rd Party without established relationship with client 
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="recruitement_type" type="radio" value="Direct Hire" />
+													Direct Hire
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-half ml-5">
+									<div class="form-group" id="div_radio">
+										<label class="control-label " for="have_cto">
+											4. Do you already have a CTO or Tech Lead? If Yes, give their Name?
+										</label>
+										<div class="ml-4">
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="have_cto" type="radio" value="Yes" />
+													 Yes <input name="cto_name" class="other_field hidden" id="cto_name" value=""  placeholder="CTO Name"/>
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="have_cto" type="radio" value="No, Interested in hiring CTO" />
+													No, Interested in Hiring for this role.
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="have_cto"  type="radio" value="Not Interested in hiring CTO" />
+													No, Not Interested in Hiring for this role.
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-half ml-5">
+									<div class="form-group" id="div_radio">
+										<label class="control-label " for="desire_corp">
+											5. Do you Desire Corp to Corp or Employee?
+										</label>
+										<div class="ml-4">
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="desire_corp" type="radio" value="Corp to Corp (1099)" />
+													Corp to Corp (1099)
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="desire_corp" type="radio" value="W-2 (Employee)" />
+													No, Interested in Hiring for this role.
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="desire_corp" type="radio" value="Not Interested in hiring CTO" />
+													No, Not Interested in Hiring for this role.
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-half ml-5">
+									<div class="form-group" id="div_radio">
+										<label class="control-label " for="upto_role">
+											6. How soon do you need this role filled?
+										</label>
+										<div class="ml-4">
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="upto_role" type="radio" value="ASAP" />
+													ASAP
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="upto_role" type="radio" value="1-3 Months" />
+													1-3 hours.
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="upto_role" type="radio" value="3-6 Months" />
+													3-6 Months
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="upto_role" type="radio" value="1 year" />
+													1 Year
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-half ml-5">
+									<div class="form-group" id="div_radio">
+										<label class="control-label " for="is_assistance_required">
+											7. Will you require assistance on submitting RFPs for Procurement? 
+										</label>
+										<div class="ml-4">
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="is_assistance_required" type="radio" value="Yes" />
+													Yes
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="is_assistance_required" type="radio" value="No" />
+													No
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-half ml-5">
+									<div class="form-group ">
+										<label class="control-label " for="assistance_type">
+											8. Will you require assistance on Investor Relations, obtaining next round of funding, or gearing for an IPO?
+										</label>
+										<div class=" ">
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="assistance_type" type="checkbox" value="First" />
+													First Choice
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="assistance_type" type="checkbox" value="Second" />
+													Second Choice
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="assistance_type" type="checkbox" value="Third" />
+													Third Choice
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="assistance_type" type="checkbox" value="Fourth" />
+													Fourth Choice
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="assistance_type" type="checkbox" value="Fifth" />
+													Fifth Choice
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-half ml-5 ">
+									<label class="nobottommargin" for="salarysmall">What salary range are you targeting for this role?</label>
+									<input tabindex="10" id="budgetsmall" name="salarysmall" class="salaryRange" oninput="calculateSalary()" />
+								</div>
+								<div class="col_half ml-5">
+									<label for="equity_package">10. What equity package is being offered? <small>*</small></label>
+									<input tabindex="1" type="text" id="equity_package" name="firstname" value="" class="sm-form-control required" />
+								</div>
+								
+								<div class="col_half ml-5">
+									<label for="other_benefits">11. Other benefits offered</label>
+									<textarea tabindex="13" class="sm-form-control" id="other_benefits" name="other_benefits" maxlength="1900"
+										rows="6" cols="25"></textarea>
+								</div>
+								<div class="col_full ml-5">
+									<div class="form-group" id="div_radio">
+										<label class="control-label " id="location" for="location">
+											12. Location Needed
+										</label>
+										<div class="ml-4">
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="location" type="radio" value="100% Remote" />
+													100% Remote
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="location" type="radio" value="95% Remote Onsite" />
+													95% Remote Onsite <input type="text" name="onsite_95_remote" class="other_field hidden" id="onsite_95_remote" class="other_field" value="" placeholder="Enter Onsite Details">
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="location" type="radio" value="San Francisco" />
+													San Francisco
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="location" type="radio" value="Houston, TX " />
+													Houston, TX 
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="location" type="radio" value="Houston, TX " />
+													New York 
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="location" type="radio" value="London  " />
+													London  
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="location" type="radio" value="Hong Kong" />
+													Hong Kong 
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="location" type="radio" value="Other" />
+													Other <input name="other_locations" class="other_field hidden" id="other_locations" type="text" value="" placeholder="Other Locations"/>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-half ml-5 mt-5 ml-xs-0">
+									<div class="form-group" id="div_radio">
+										<label class="control-label " for="work_authorization">13. Work Authorization Required:</label>
+										<div class="ml-4">
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="work_authorization" type="radio" value="US Citizen or Green Card Holder Only" />
+													US Citizen or Green Card Holder Only
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="work_authorization" type="radio" value="US Citizen, Green Card, or EAD Holder" />
+													US Citizen, Green Card, or EAD Holder
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="work_authorization" type="radio" value="US Citizen, Green Card, EAD, or OPT Holder " />
+													US Citizen, Green Card, EAD, or OPT Holder 
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="work_authorization" type="radio" value="Will Sponsor Visa" />
+													Will Sponsor Visa
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="work_authorization" type="radio" value="International Role. No Visa Required" />
+													International Role. No Visa Required
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="work_authorization" type="radio" value="Other" />
+													Other <input type="text" name="other_work_authorization" id="other_work_authorization" class="other_field hidden" value="" placeholder="Other Values" />
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-half ml-5">
+									<div class="form-group" value="" id="div_radio">
+										<label class="control-label " for="cloud_stack">14. Cloud Stack Used:</label>
+										<div class="ml-4">
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="cloud_stack" type="radio" value="Azure" />
+													Azure
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="cloud_stack" type="radio" value="US Citizen, Green Card, or EAD Holder" />
+													AWS
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="cloud_stack" type="radio" value="US Citizen, Green Card, EAD, or OPT Holder " />
+													GCP 
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="cloud_stack" type="radio" value="Will Sponsor Visa" />
+													Mixture 
+												</label>
+											</div>
+											<div class="radio">
+												<label class="radio-inline">
+													<input name="cloud_stack" type="radio" value="Unknown" />
+													Unknown
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-half ml-5">
+									<div class="form-group ">
+										<label for="tech_stack" value="" class="control-label ">
+											15. Tech Stack Used (check all that apply)
+										</label>
+										<div class=" ">
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="tech_stack" type="checkbox" value="TerraForm" />
+													TerraForm
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="tech_stack" type="checkbox" value="Node" />
+													Node JS
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="tech_stack" type="checkbox" value="Angular" />
+													Angular
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="tech_stack" type="checkbox" value="React" />
+													React
+												</label>
+											</div>
+											<div class="checkbox">
+												<label class="checkbox">
+													<input name="tech_stack" id="tech_stack_other" type="checkbox" value="Others: " />
+													Others <input type="text" name="other_tech_stack" id="other_tech_stack" class="other_field hidden" value="" placeholder="Other Values" />
+												</label>
+											</div>
+										</div>
+									</div>
 								</div>
 
-								<div class="col_one_third ">
-								<label for="marketing">Marketing  </label>
-								<input tabindex="16" class="bt-switch" type="checkbox" name="marketing" data-size="mini">
-								</div>
+								
+								
+
 
 								<!-- Update Values using Javascript Calculator before Submitting -->
 								<input type="hidden" id="revenue" name="revenue">
@@ -538,6 +900,27 @@
 				// 	return m.format("Do MMMM, LT");
 				// }
 			});
+			$(".salaryRange").ionRangeSlider({
+					grid: true,
+					hide_min_max: true,
+					min: 120000,
+					max: 1000000,
+					from: 120000,
+					step: 20000,
+					prettify_separator: ",",
+					prettify_enabled: true,
+					decorate_both: true, 
+					prefix: "$",
+					max_postfix: "+",
+					postfix: "k"
+					// prettify: function (num) {
+					// 	var m = moment(num, "X").locale("ja");
+					// 	return m.format("Do MMMM, LT");
+					// }
+				});
+		    function calculateSalary(){
+				console.log('sc')
+			}
 	</script>
 	<script>
 	$("#rating").rating({
