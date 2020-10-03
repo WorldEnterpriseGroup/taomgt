@@ -3,7 +3,7 @@ Tao Mgt Ltd has over 20 years experience in the oversight, operation, and manage
 
 <h1 align="center">
   <br>
-  <img src="https://github.com/TaoFruit/taomgt/blob/gh-pages/images/SVG/taomgt.svg" alt="Foco" width="400">
+  <img src="https://github.com/TaoFruit/taomgt/blob/gh-pages/images/SVG/taomgt_1.svg" alt="Foco" width="400">
 </h1>
 
 
