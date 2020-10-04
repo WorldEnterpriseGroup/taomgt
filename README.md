@@ -12,21 +12,21 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Tools/IDE:
-1. <a href="https://code.visualstudio.com/download">VS Code <small>(Preferred)</small></a> or any another IDE to make changes into the code.
-2. Git should be installed in the system.
+  Tools/IDE:
+  1. <a href="https://code.visualstudio.com/download">VS Code <small>(Preferred)</small></a> or any another IDE to make changes into the code.
+  2. Git should be installed in the system.
 
-Languages/Technologies used in the project:
-1. HTML
-2. CSS
-3. JavaScript
-4. JQuery
+  Languages/Technologies used in the project:
+  1. HTML
+  2. CSS
+  3. JavaScript
+  4. JQuery
 
 ### Installation:
 #### Direct Download
-1. Download <a href="https://github.com/TaoFruit/taomgt/archive/gh-pages.zip" target="_blank">Tao Management.zip</a>
-2. Extract the zip file.
-3. Open the folder in <b>VS Code</b> or any other <b>Code Editor</b>
+  1. Download <a href="https://github.com/TaoFruit/taomgt/archive/gh-pages.zip" target="_blank">Tao Management.zip</a>
+  2. Extract the zip file.
+  3. Open the folder in <b>VS Code</b> or any other <b>Code Editor</b>
 
 ### For developers using git
   1. First, <a href="https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo"><b>Fork</b></a> this repo.
@@ -55,7 +55,7 @@ Languages/Technologies used in the project:
   **Note: Always make a new branch before making changes.**
 
 
-  ### To see your changes locally when you make changes:
+### To see your changes locally when you make changes:
   1. Open the html file in which changes were made directly in the browser and <kbd>Command/ctrl + R</kbd> - Reload  everytime if you make changes.
   2. Also, if <b>VS Code</b> <b><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a></b> can be used to see the changes directly without refreshing the page manually.
 
