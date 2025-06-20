@@ -360,8 +360,16 @@
 								<div class="col_full hidden">
 									<input tabindex="14" type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
 								</div>
+								
+								<!-- Marketing Consent Section -->
+								<div class="col_full">
+									<label for="marketing" style="margin-bottom: 10px;"><strong>Marketing & Communication Consent</strong> <input tabindex="16" class="bt-switch" type="checkbox" data-on-text="I Consent" data-off-text="No" name="marketing" id="marketing" data-size="mini" required></label>
+									<p style="font-size: 0.9em; line-height: 1.5; margin-bottom: 15px;">
+										By toggling the box above to On, you provide your express written consent for Tao Mgt to contact you for marketing purposes using the information you have provided. This may include communication by email, telephone calls, and text messages to the phone number you provided, even if that number is on a Do-Not-Call list. You understand that calls or texts may be sent using an automated system. Your consent is not a condition of any purchase. Message & data rates may apply. Message frequency varies. You may opt-out at any time by replying STOP to any text message. Please review our <a href="/privacy.html" target="_blank">Privacy Policy</a> and <a href="/tos.html" target="_blank">Terms of Service</a> for more details.
+									</p>
+								</div>
 
-								<div class="col_one_third">
+								<div class="col_half">
 									<input tabindex="15" type="partner" id="partner" name="partner" value="" placeholder="Tao Partner Email" class="sm-form-control" />
 									<datalist id="partner">
 									<option value="@gmail.com">
@@ -370,21 +378,11 @@
 									</datalist>
 								</div>
 
-								<div class="col_one_third">
-								    <label for="marketing">
-								        <strong>Marketing Consent</strong>
-								    </label>
-								    <p style="font-size: 0.95em; margin-bottom: 8px;">
-								        By checking this box, you agree that Tao Mgt may contact you by phone, text, or email at any time for marketing purposes, as described in our <a href="/marketing-policy.html" target="_blank">Marketing Policy</a>.
-								    </p>
-								    <input tabindex="16" class="bt-switch" type="checkbox" name="marketing" id="marketing" data-size="mini" required>
-								</div>
-
 								<!-- Update Values using Javascript Calculator before Submitting -->
 								<input type="hidden" id="revenue" name="revenue">
 								<input type="hidden" id="budget" name="budget">
 
-								<div class="col_one_third center col_last">
+								<div class="col_half">
 									<button tabindex="17" class="button button-3d nomargin" type="submit" id="TaoSubmit" name="submit" value="Send">Submit Info</button>
 								</div>
 					
