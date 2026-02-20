@@ -1,54 +1,89 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="TaoFruit" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="TaoLimited LLC">
+	<meta name="description" content="Tao Mgt delivers enterprise consulting in ERP, solution architecture, and business operations. 25 years of experience transforming global organizations.">
+	<link rel="canonical" href="https://taomgt.com/">
+	<meta property="og:title" content="Tao Mgt — Enterprise Consulting & ERP Solutions">
+	<meta property="og:description" content="Tao Mgt delivers enterprise consulting in ERP, solution architecture, and business operations. 25 years of experience transforming global organizations.">
+	<meta property="og:image" content="https://taomgt.com/images/services/leadership.avif">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://taomgt.com/">
+	<meta name="twitter:card" content="summary_large_image">
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 	<!-- Stylesheets
 	============================================= -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,600,700|Open+Sans:300,400,600,700,800,900" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" href="css/dark.css" type="text/css">
+	<link rel="stylesheet" href="css/swiper.css" type="text/css">
 	<!-- Business Demo Specific Stylesheet -->
-	<link rel="stylesheet" href="demos/business/business.css" type="text/css" />
-	<link rel="stylesheet" href="demos/business/css/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="demos/business/business.css" type="text/css">
+	<link rel="stylesheet" href="demos/business/css/fonts.css" type="text/css">
 	<!-- / -->
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-	<link rel="stylesheet" href="one-page/css/et-line.css" type="text/css" />
-	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!--[if lt IE 9]>
-		<script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-	<![endif]-->
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css">
+	<link rel="stylesheet" href="css/animate.css" type="text/css">
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+	<link rel="stylesheet" href="one-page/css/et-line.css" type="text/css">
+	<link rel="stylesheet" href="css/responsive.css" type="text/css">
+	<link rel="stylesheet" href="css/custom-modern.css" type="text/css">
 	<!-- Theme Color
 	============================================= -->
-	<link rel="stylesheet" href="demos/business/css/colors.css" type="text/css" />
+	<link rel="stylesheet" href="demos/business/css/colors.css" type="text/css">
+	<!-- Structured Data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "ProfessionalService",
+		"name": "TAO MGT LTD",
+		"url": "https://taomgt.com",
+		"logo": "https://taomgt.com/images/SVG/taomgt.svg",
+		"description": "Enterprise consulting firm specializing in ERP implementation, solution architecture, and business operations management.",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "48 Wall Street",
+			"addressLocality": "New York",
+			"addressRegion": "NY",
+			"postalCode": "10005",
+			"addressCountry": "US"
+		},
+		"telephone": "+1-929-374-4853",
+		"email": "info@taomgt.com",
+		"naics": "541611",
+		"sameAs": []
+	}
+	</script>
+	<!-- Speculation Rules -->
+	<script type="speculationrules">
+	{"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+	</script>
 	<!-- Document Title
 	============================================= -->
-	<title>Tao Mgt</title>
+	<title>Tao Mgt — Enterprise Consulting & ERP Solutions</title>
 </head>
 <body class="stretched">
+	<a href="#main" class="skip-link">Skip to content</a>
 	<!-- Document Wrapper
 	============================================= -->
 	<div id="wrapper" class="clearfix">
 		<!-- Header
 		============================================= -->
-		<header id="header" class="transparent-header not-dark full-header" data-sticky-class="dark" data-responsive-class="dark" data-sticky-offset="full">
+		<header id="header" class="transparent-header not-dark full-header" data-sticky-class="not-dark" data-responsive-class="dark" data-sticky-offset="full">
 			<div id="header-wrap">
 				<div class="container clearfix">
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 					<!-- Logo
 					============================================= -->
 					<div id="logo">
-						<a href="/" class="svg">
-							<div class="navbar-brand">
-								<object data="images/SVG/taomgt.svg"  width="120px" height="100%" type="image/svg+xml" class="taologo">
-								<img src="demos/business/images/logo-dark@2x.png" />
-								</object>
-							</div>
+						<a href="/" aria-label="Tao Management — Home">
+							<span class="tao-logo-kanji" aria-hidden="true">道</span>
+							<img src="images/SVG/taomgt.svg" alt="Tao Management" class="logo-light" width="120" height="19">
+							<img src="images/SVG/taomgt_1.svg" alt="Tao Management" class="logo-dark" width="120" height="19">
 						</a>
 					</div><!-- #logo end -->
 					<!-- Primary Navigation
@@ -58,24 +93,31 @@
 							<li><a href="services.html"><div>Services</div></a>
 								<ul>
 									<li><a href="services.html#erp"><div>Enterprise Resource Planning</div></a></li>
-									<li><a href="services.html#sa"><div>Solution Artchitecture</div></a></li>
+									<li><a href="services.html#sa"><div>Solution Architecture</div></a></li>
 									<li><a href="services.html#leadership"><div>Business Operations</div></a></li>
+									<li><a href="services.html#ai"><div>AI &amp; Agentic Consulting</div></a></li>
+								</ul>
+							</li>
+							<li><a href="industries.html"><div>Industries</div></a>
+								<ul>
+									<li><a href="industries.html#technology"><div>Technology</div></a></li>
+									<li><a href="industries.html#healthcare"><div>Healthcare</div></a></li>
+									<li><a href="industries.html#financial"><div>Financial Services</div></a></li>
+									<li><a href="industries.html#energy"><div>Energy &amp; Utilities</div></a></li>
+									<li><a href="industries.html#retail"><div>Retail &amp; Consumer</div></a></li>
+								</ul>
+							</li>
+							<li><a href="insights.html"><div>Insights</div></a>
+								<ul>
+									<li><a href="insights.html#case-studies"><div>Case Studies</div></a></li>
+									<li><a href="insights.html#perspectives"><div>Perspectives</div></a></li>
+									<li><a href="insights.html#white-papers"><div>White Papers</div></a></li>
 								</ul>
 							</li>
 							<li><a href="about.html"><div>About Us</div></a></li>
 							<li><a href="faq.html"><div>FAQs</div></a></li>
-							<li><a href="consulting"><div>Consulting</div></a></li>
+							<li><a href="consulting/" class="tao-cta-nav"><div>Consulting</div></a></li>
 						</ul>
-
-						<!-- Top Search
-						============================================= -->
-						<div id="top-search">
-							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
-							<form action="search.html" method="get">
-								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
-							</form>
-						</div><!-- #top-search end -->
-
 					</nav><!-- #primary-menu end -->
 
 				</div>
@@ -91,43 +133,43 @@
 			<div class="slider-parallax-inner">
 				<div class="swiper-container swiper-parent">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide dark" style="background-image: url('demos/business/images/slider/stylish.jpg'); background-size: cover">
+						<div class="swiper-slide dark" style="background-image: url('demos/business/images/slider/cherry-blossom.avif'); background-size: cover">
 							<div class="container clearfix">
 								<div class="slider-caption slider-caption-center">
-									<h2 class="font-primary">Enterprise Resource Planning</h2>
-									<p class="t300 font-primary d-none d-sm-block">SME and Enterprise Solutions in Scalable Fashion</p>
-									<a href="services.html#erp" class="button button-rounded button-large nott ls0 font-primary">Learn More</a>
+									<h1 class="font-primary">The Way of Enterprise Transformation</h1>
+									<p class="t300 font-primary d-none d-sm-block">25 years of kaizen-driven consulting. We bring the precision of Japanese methodology to ERP, cloud architecture, and global operations.</p>
+									<a href="consulting" class="button button-rounded button-large font-primary">Find Your Path</a>
 								</div>
 							</div>
 						</div>
-						<div class="swiper-slide dark" data-top-bottom="background-position:0px -400px;" data-bottom-top="background-position:0px 300px;" style="background-image: url('demos/business/images/slider/building.jpg');   background-size: cover">
+						<div class="swiper-slide dark" style="background-image: url('demos/business/images/slider/singapore2.avif'); background-size: cover">
 							<div class="container clearfix">
 								<div class="slider-caption slider-caption-center">
-									<h2 class="font-primary">Solution Architecture</h2>
-									<p class="t300 font-primary d-none d-sm-block">We orchestrate intelligent Azure IT Solutions</p>
-									<a href="services.html#sa" class="button button-rounded button-large nott ls0 font-primary">Learn More</a>
+									<h2 class="font-primary">Harmony Through Architecture</h2>
+									<p class="t300 font-primary d-none d-sm-block">Balanced systems built with precision — cloud infrastructure designed with the flow and intention of feng shui.</p>
+									<a href="services.html#sa" class="button button-rounded button-large font-primary">Explore Solutions</a>
 								</div>
 							</div>
 						</div>
-						<div class="swiper-slide dark" style="background-image: url('demos/business/images/slider/singapore2.jpg'); background-size: cover">
+						<div class="swiper-slide dark" style="background-image: url('demos/business/images/slider/shibuya-aerial.avif'); background-size: cover">
 							<div class="container clearfix">
 								<div class="slider-caption slider-caption-center">
-									<h2 class="font-primary nott">Business Operations</h2>
-									<p class="t300 font-primary d-none d-sm-block">Global Management, ERP Strategy, and Compliance</p>
-									<a href="services.html#services" class="button button-rounded button-large nott ls0 font-primary">Learn More</a>
+									<h2 class="font-primary nott">Global Operations. Zen Precision.</h2>
+									<p class="t300 font-primary d-none d-sm-block">Strategic management and operational excellence refined through lean methodology and continuous improvement.</p>
+									<a href="services.html#leadership" class="button button-rounded button-large font-primary">Learn More</a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- Slider Arrows
 					============================================= -->
-					<div class="slider-arrow-left" class="nobg"><i class="icon-line-arrow-left"></i></div>
-					<div class="slider-arrow-right" class="nobg"><i class="icon-line-arrow-right"></i></div>
+					<div class="slider-arrow-left"><i class="icon-line-arrow-left"></i></div>
+					<div class="slider-arrow-right"><i class="icon-line-arrow-right"></i></div>
 				</div>
 
 				<!-- Slider Mouse Icon
 				============================================= -->
-				<a href="#" data-scrollto="#content" data-offset="0" class="dark one-page-arrow"><img class="infinite animated fadeInDown" src="demos/business/images/mouse.svg" alt="" ></a>
+				<a href="#" data-scrollto="#content" data-offset="0" class="dark one-page-arrow" aria-label="Scroll down" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;"><span class="infinite animated fadeInDown" style="display:block;width:16px;height:16px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg);"></span></a>
 			</div>
 
 		</section>
@@ -135,142 +177,288 @@
 		<!-- Content
 		============================================= -->
 		<section id="content">
+			<main id="main">
 
 			<div class="content-wrap nobottompadding" style="z-index: 1;">
 
-				<div class="container topmargin clearfix">
-
-					<!-- What We Do
-					============================================= -->
-					<div class="heading-block center noborder" data-heading="W">
-						<h3>What We Do</h3>
-					</div>
-					<div class="row clearfix">
-						<div class="center col-lg-8 offset-lg-2 bottommargin">
-							<h3 class="text-rotater font-secondary" data-separator="," data-rotate="fadeInRight" data-speed="3500">Simple. We manage things.  Tao Mgt Ltd has over 20 years experience in the oversight, operation, and management of projects that scale.  We plan out large term projects and then streamline international team-oriented operations to iterate workflow. We manage task forces in the areas of <span class="t-rotate color">Business,Enterprise Resource Planning,Medical,Travel,Construction,Real Estate,Infrastructure,Data Mining,DevOps,International Law</span><br> and growing sectors of the global economy.</h3>
-						</div>
-
-						<div class="clear"></div>
-
-						<!-- Features colomns
-						============================================= -->
-						<div class="row clearfix">
-							<div class="col-lg-4 bottommargin-sm">
-								<div class="feature-box media-box fbox-bg">
-									<div class="fbox-media">
-										<a href="services.html#erp"><img class="image_fade" src="images/services/solutiona.jpg" alt="ERP Solutions"></a>
-									</div>
-									<div class="fbox-desc">
-										<h3 class="nott ls0 t600">ERP Consulting<span class="subtitle font-secondary t300 ls0">We provide ERP Consulting and Implementation.</span></h3>
-										<a href="services.html#erp" class="button-link noborder color">Read More</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 bottommargin-sm">
-								<div class="feature-box media-box fbox-bg">
-									<div class="fbox-media">
-										<a href="services.html#sa"><img class="image_fade" src="images/services/servers.jpg" alt="Solution Architecture"></a>
-									</div>
-									<div class="fbox-desc">
-										<h3 class="nott ls0 t600">Solution Architecture<span class="subtitle font-secondary t300 ls0">We orchestrate intelligent Azure IT Solutions </span></h3>
-										<a href="services.html#sa" class="button-link noborder color">Read More</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 bottommargin-sm">
-								<div class="feature-box media-box fbox-bg">
-									<div class="fbox-media">
-										<a href="services.html#leadership"><img class="image_fade" src="images/services/leadership.jpg" alt="Leadership"></a>
-									</div>
-									<div class="fbox-desc">
-										<h3 class="nott ls0 t600">Business Operations<span class="subtitle font-secondary t300 ls0">We consult, manage, and streamline management.</span></h3>
-										<a href="services.html#leadership" class="button-link noborder color">Read More</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- How We Work
+				<!-- ============================================
+				     Section 1: Capabilities — full-bleed
 				============================================= -->
-				<div class="section nobg clearfix">
+				<section class="tao-cap-section content-visibility-auto">
 					<div class="container clearfix">
-						<div class="heading-block bottommargin-lg center noborder" data-heading="T">
-							<h3 class="nott ls0">The Tao Process</h3>
-						</div>
+						<span class="tao-kicker">道 — The Way of Enterprise</span>
+						<h2 class="tao-headline">Harmony meets<br>enterprise.</h2>
 					</div>
+					<div class="tao-cap-grid">
+						<a href="services.html#erp" class="tao-cap" style="background-image: url('images/services/zen-erp.avif')">
+							<span class="tao-cap-idx" aria-hidden="true">01</span>
+							<div class="tao-cap-inner">
+								<h3>ERP Consulting</h3>
+								<p>Kaizen-driven implementation. Continuous improvement across SAP, Dynamics&nbsp;365, and ERPNext.</p>
+								<span class="tao-cap-arrow" aria-hidden="true">&#x279C;</span>
+							</div>
+						</a>
+						<a href="services.html#sa" class="tao-cap" style="background-image: url('images/services/zen-datacenter.avif')">
+							<span class="tao-cap-idx" aria-hidden="true">02</span>
+							<div class="tao-cap-inner">
+								<h3>Solution Architecture</h3>
+								<p>Harmony through structure. Resilient cloud systems designed with balance and precision.</p>
+								<span class="tao-cap-arrow" aria-hidden="true">&#x279C;</span>
+							</div>
+						</a>
+						<a href="services.html#leadership" class="tao-cap" style="background-image: url('images/zen-executive.avif')">
+							<span class="tao-cap-idx" aria-hidden="true">03</span>
+							<div class="tao-cap-inner">
+								<h3>Business Operations</h3>
+								<p>Lean methodology meets Six Sigma discipline. Operational excellence for global teams.</p>
+								<span class="tao-cap-arrow" aria-hidden="true">&#x279C;</span>
+							</div>
+						</a>
+						<a href="services.html#ai" class="tao-cap tao-cap--ai" style="background-image: url('images/services/zen-ai.avif')">
+							<span class="tao-cap-idx" aria-hidden="true">04</span>
+							<div class="tao-cap-inner">
+								<h3>AI &amp; Agentic Consulting</h3>
+								<p>Autonomous AI agents that learn, adapt, and evolve — the digital embodiment of 道.</p>
+								<span class="tao-cap-arrow" aria-hidden="true">&#x279C;</span>
+							</div>
+						</a>
+					</div>
+				</section>
 
-					<!-- How We Work - Carousel
-					============================================= -->
-					<div id="oc-features" class="owl-carousel owl-carousel-full image-carousel carousel-widget">
-						<div class="oc-item">
-							<div class="row cleafix">
-								<div class="col-xl-4">
-									<div class="tao_process_container center">
-										<object data="images/SVG/taoprocess.svg" width="100%" height="200px" style="display: block; margin: auto;" type="image/svg+xml" class="newtao_process">
-											<img src="images/services/process2.png" height="500px" width="334px">
-										</object>
-									</div>
-								</div>
-								<div class="col-xl-8" style="padding: 20px 0 0 20px;">
-									<h5>1. Dream</h5>
-									<p>We encourage exploration in business to define passions and to align goals with tangible outcomes. This phase brings inner clarity to outline a new chapter in life or business. We provide experiences, resources, education, and atmospheres that encourage the manifestation of sound dreams.</p>
-									<h5>2. Develop</h5>
-									<p>Once a dream is fully defined we incubate the vision and test market reception through our identity program and campaign strategies. This phase expands and provides nourishment to an idea while establishing a direction that is grounded and well cultivated. An MVP and bootstrapped philosophy, regardless of the actual funding will create resistant tolerate framework for a sustainable future.</p>
-									<h5>3. Discipline</h5>
-									<p>Our Cloud Productivity team and Agile Coaches use the plans we design to start creating formal policies, procedures, and training task forces to accomplish goals. We implement solutions through Focus Hives with teams where we track small iterations of progress through OKRs, KPIs, and a variety of our own soft skill analytics known as Curiosity Scores.</p>
-									<a href="consulting/" class="button button-rounded button-large nott ls0 font-primary">Consult with Us</a>
-								</div>
+				<!-- Kaizen philosophy strip -->
+				<div class="tao-kaizen-strip" aria-hidden="true">
+					<span>改善 Kaizen</span>
+					<span>六シグマ Six Sigma</span>
+					<span>リーン Lean</span>
+					<span>風水 Feng Shui</span>
+					<span>無駄 Muda</span>
+					<span>看板 Kanban</span>
+					<span>現場 Gemba</span>
+					<span>品質 Hinshitsu</span>
+					<span>自働化 Jidoka</span>
+					<span>平準化 Heijunka</span>
+					<span>ポカヨケ Poka-Yoke</span>
+				</div>
+
+				<!-- ============================================
+				     Section 2: Platform Partners
+				============================================= -->
+				<div class="tao-platforms content-visibility-auto">
+					<div class="container clearfix">
+						<div class="tao-platform-strip" role="list" aria-label="Technology platforms">
+							<div class="tao-platform-logo" role="listitem">
+								<svg viewBox="0 0 56 28" aria-label="SAP" role="img"><text x="28" y="21" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="600" font-size="20" fill="currentColor">SAP</text></svg>
 							</div>
-						</div>
-						<div class="oc-item">
-							<div class="row cleafix">
-								<div class="col-xl-8">
-									<<canvas id="chakra"></canvas>>
-								</div>
-								<div class="col-xl-4" style="padding: 20px 0 0 20px;">
-									<h3>Team Empowerment &amp; Skill Tracking</h3>
-									<p>Data analysis and progression tracking are key to managing any successful model.  We've designed our own analytical tools for use by teams and easy to monitor and implement by leaders.</p>
-									<p>We utilize certified Microsoft coaches to build Agile teams and train teams of all sizes in enterprise-level skills for the digital age. We also create artificial intelligence with Marisa AI&trade;, our proprietary VA Solution built into our ERP solutions.</p>
-									<a href="services.html" class="button button-rounded button-large nott ls0 font-primary">Our Services</a>
-								</div>
+							<div class="tao-platform-logo" role="listitem">
+								<svg viewBox="0 0 76 28" aria-label="Oracle" role="img"><text x="38" y="21" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="600" font-size="20" fill="currentColor">Oracle</text></svg>
 							</div>
-						</div>
-						<div class="oc-item">
-							<div class="row cleafix">
-							<div class="col-xl-6 topmargin nobottommargin col_last">
-									<h3>Meticulous Finance &amp; IT Operations</h3>
-									<h5>Fiscal Strategy</h5>
-									<p>At the heart of success is the ability to track and analyze financial flow.  We use industry-standard accounting practices along with our own proprietary software for startup incubation. We manage accounting firms in various countries to keep track of our energy flow.</p>
-									<h5>Azure DevOps</h5>
-									<p>For scalable IT Management, we utilize a variety of aspects of the Azure ecosystem. Each project is unique, though we always recommend clients to utilize Azure as the central fabric of their development.</p>
-									<h5>Dynamics 365</h5>
-									<p>We blend AI into AWS, SAP, D365, and a variety of digital logistics solutions. We have BPOs that can handle the largest of companies and startups alike as they build out their CRM or F&amp;O Solutions.</p>
-								</div>
-								<div class="col-xl-6">
-								<div class="col-xl-6 topmargin nobottommargin ">
-									<div style="padding-left: 0px">
-										<div style="position: relative;" data-height-xl="535" data-height-lg="442" data-height-md="338" data-height-sm="316" data-height-xs="201">
-											<img  src="images/services/device1a.png" alt="Mac" style="position: absolute; top: 0; left: 0;">
-											<img  src="images/services/device2a.png" alt="iPad" style="position: absolute; top: 0; left: 0;">
-											<img   src="images/services/device3a.png" alt="iPhone" style="position: absolute; top: 0; left: 0;">
-										</div>
-									</div>
-								</div>
-								</div>
-								
+							<div class="tao-platform-logo" role="listitem">
+								<svg viewBox="0 0 155 28" aria-label="Dynamics 365" role="img"><text x="78" y="21" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="600" font-size="20" fill="currentColor">Dynamics 365</text></svg>
+							</div>
+							<div class="tao-platform-logo" role="listitem">
+								<svg viewBox="0 0 92 28" aria-label="Workday" role="img"><text x="46" y="21" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="600" font-size="20" fill="currentColor">Workday</text></svg>
+							</div>
+							<div class="tao-platform-logo" role="listitem">
+								<svg viewBox="0 0 145 28" aria-label="ServiceNow" role="img"><text x="73" y="21" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="600" font-size="20" fill="currentColor">ServiceNow</text></svg>
+							</div>
+							<div class="tao-platform-logo" role="listitem">
+								<svg viewBox="0 0 120 28" aria-label="Salesforce" role="img"><text x="60" y="21" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="600" font-size="20" fill="currentColor">Salesforce</text></svg>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				
+				<!-- ============================================
+				     Section 3: Methodology — The Way
+				============================================= -->
+				<div class="tao-approach content-visibility-auto">
+					<div class="tao-approach-progress" aria-hidden="true"><div class="tao-approach-progress-fill"></div></div>
+					<div class="tao-enso tao-enso--right" aria-hidden="true"></div>
+					<div class="tao-yinyang-float" style="bottom: 8%; left: 3%;" aria-hidden="true">
+						<img src="images/yin-yang-abstract.avif" alt="" width="220" height="220" loading="lazy" decoding="async">
+					</div>
 
-				
+					<div class="container clearfix">
+						<div class="row align-items-end tao-section-header">
+							<div class="col-lg-7">
+								<span class="tao-kicker tao-kicker--light">道 Our Methodology</span>
+								<h2 class="tao-h2 tao-h2--light">The Way of<br>transformation.</h2>
+							</div>
+							<div class="col-lg-4 offset-lg-1 d-none d-lg-flex align-items-end">
+								<p class="tao-approach-intro">Toyota's Kaizen. Motorola's Six Sigma. Refined through 25&nbsp;years of enterprise transformation — now accelerated by agentic AI.</p>
+							</div>
+						</div>
+
+						<!-- Horizontal track: 3 connected nodes -->
+						<div class="tao-approach-track" aria-hidden="true">
+							<div class="tao-approach-track-line"></div>
+							<div class="tao-approach-track-node tao-approach-track-node--1"></div>
+							<div class="tao-approach-track-node tao-approach-track-node--2"></div>
+							<div class="tao-approach-track-node tao-approach-track-node--3"></div>
+						</div>
+
+						<div class="tao-approach-steps">
+							<article class="tao-approach-step">
+								<div class="tao-step-ghost" aria-hidden="true">一</div>
+								<div class="tao-step-body">
+									<span class="tao-step-label">観 Observe</span>
+									<h3>Discover</h3>
+									<p>Gemba walks meet AI-driven analysis. We map your service landscape through deep observation — the Toyota way — augmented by machine intelligence that surfaces patterns invisible to the human eye.</p>
+								</div>
+							</article>
+							<article class="tao-approach-step">
+								<div class="tao-step-ghost" aria-hidden="true">二</div>
+								<div class="tao-step-body">
+									<span class="tao-step-label">設計 Design</span>
+									<h3>Architect</h3>
+									<p>Balance and flow. We design operating models with the precision of feng shui — every system, workflow, and data stream in its right place. Agentic AI handles the migration while your team focuses on vision.</p>
+								</div>
+							</article>
+							<article class="tao-approach-step">
+								<div class="tao-step-ghost" aria-hidden="true">三</div>
+								<div class="tao-step-body">
+									<span class="tao-step-label">改善 Evolve</span>
+									<h3>Deliver &amp; Evolve</h3>
+									<p>Kaizen — continuous improvement, not a single launch. Autonomous AI agents monitor, learn, and optimize post-deployment. Your systems don't just go live, they get better every day.</p>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+
+				<!-- ============================================
+				     Section 4: Parallax Statement + Stats
+				============================================= -->
+				<div class="tao-statement content-visibility-auto" style="background-image: url('images/zen-garden.avif');">
+					<div class="tao-statement-overlay"></div>
+					<div class="container clearfix">
+						<div class="tao-statement-inner">
+							<blockquote class="tao-blockquote">
+								<p>We bring the discipline of Toyota, the rigor of Six Sigma, and the balance of Eastern philosophy to every enterprise we touch.</p>
+							</blockquote>
+							<div class="tao-stats-row">
+								<div class="tao-stat">
+									<div class="counter counter-large tao-stat-number"><span data-from="0" data-to="25" data-speed="2000"></span>+</div>
+									<span class="tao-stat-label">Years of Experience</span>
+								</div>
+								<div class="tao-stat">
+									<div class="counter counter-large tao-stat-number"><span data-from="0" data-to="50" data-speed="2000"></span>+</div>
+									<span class="tao-stat-label">Enterprise Clients</span>
+								</div>
+								<div class="tao-stat">
+									<div class="counter counter-large tao-stat-number"><span data-from="0" data-to="12" data-speed="2000"></span>+</div>
+									<span class="tao-stat-label">Countries Served</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Yin/Yang wave separator -->
+				<div class="tao-wave-sep tao-wave-sep--dark tao-wave-sep--navy-to-light" aria-hidden="true">
+					<svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0,10 C120,28 240,48 360,52 C480,56 600,44 720,32 C840,20 960,12 1080,18 C1200,24 1320,48 1440,60 L1440,80 L0,80 Z"/>
+					</svg>
+				</div>
+
+				<!-- ============================================
+				     Section 5: Featured Insight
+				============================================= -->
+				<div class="tao-insight content-visibility-auto">
+					<div class="container clearfix">
+						<div class="row align-items-center g-4">
+							<div class="col-lg-5">
+								<span class="tao-kicker">Case Study</span>
+								<h2 class="tao-h2" style="font-size: clamp(1.5rem, 3vw, 2rem);">Kaizen + AI: 60% of manual ERP workflows eliminated for a $2B healthcare system</h2>
+								<p class="tao-lead">Seven legacy systems. Thousands of manual transactions. We applied lean methodology and agentic AI to deliver full Dynamics&nbsp;365 consolidation in 14&nbsp;months — using continuous improvement cycles, not big-bang launches.</p>
+								<div class="tao-insight-metrics">
+									<div class="tao-metric">
+										<strong>60%</strong>
+										<span>Manual workflows eliminated</span>
+									</div>
+									<div class="tao-metric">
+										<strong>7→1</strong>
+										<span>Systems consolidated</span>
+									</div>
+									<div class="tao-metric">
+										<strong>$4.2M</strong>
+										<span>Annual savings via AI</span>
+									</div>
+								</div>
+								<a href="insights.html#case-studies" class="tao-text-link">Read the full case study <span aria-hidden="true">→</span></a>
+							</div>
+							<div class="col-lg-6 offset-lg-1">
+								<div class="tao-insight-visual">
+									<img src="images/services/dashboard-mockup.avif" alt="Enterprise dashboard showing unified ERP system metrics" loading="lazy" decoding="async" width="800" height="500">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Wave separator — insight to industries -->
+				<div class="tao-wave-sep tao-wave-sep--light tao-wave-sep--light-to-rice" aria-hidden="true">
+					<svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0,48 C180,60 360,24 540,20 C720,16 900,44 1080,52 C1200,56 1320,40 1440,30 L1440,80 L0,80 Z"/>
+					</svg>
+				</div>
+
+				<!-- ============================================
+				     Section 6: Industries
+				============================================= -->
+				<div class="tao-industries content-visibility-auto">
+					<div class="container clearfix">
+						<div class="tao-section-header">
+							<span class="tao-kicker tao-kicker--center">Industries</span>
+							<h2 class="tao-h2 text-center">Balance in every domain.<br class="d-none d-md-block"> Precision in every delivery.</h2>
+						</div>
+
+						<div class="tao-industry-grid">
+							<a href="industries.html#technology" class="tao-industry">
+								<span class="tao-industry-icon"><i class="icon-laptop2"></i></span>
+								<h3>Technology</h3>
+								<p>Lean cloud migration. AI-native architecture. Continuous delivery through kaizen principles.</p>
+							</a>
+							<a href="industries.html#healthcare" class="tao-industry">
+								<span class="tao-industry-icon"><i class="icon-heartbeat"></i></span>
+								<h3>Healthcare</h3>
+								<p>HIPAA-compliant AI. Clinical workflow harmony. Precision health IT built with care.</p>
+							</a>
+							<a href="industries.html#financial" class="tao-industry">
+								<span class="tao-industry-icon"><i class="icon-line-chart"></i></span>
+								<h3>Financial Services</h3>
+								<p>Six Sigma risk discipline. AI-driven compliance. Balance in every transaction.</p>
+							</a>
+							<a href="industries.html#energy" class="tao-industry">
+								<span class="tao-industry-icon"><i class="icon-bolt"></i></span>
+								<h3>Energy &amp; Utilities</h3>
+								<p>Predictive AI for asset flow. Operational technology balanced with sustainability.</p>
+							</a>
+							<a href="industries.html#retail" class="tao-industry">
+								<span class="tao-industry-icon"><i class="icon-shopping-cart1"></i></span>
+								<h3>Retail &amp; Consumer</h3>
+								<p>AI-powered supply chains. Kanban-inspired inventory. Omnichannel harmony.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- ============================================
+				     Section 7: CTA
+				============================================= -->
+				<div class="tao-cta content-visibility-auto">
+					<div class="container clearfix">
+						<div class="tao-cta-inner">
+							<h2>Find the Way.</h2>
+							<p>ERP. Architecture. AI. The discipline of kaizen, applied to your enterprise.</p>
+							<a href="consulting/" class="tao-cta-button">Begin the Journey</a>
+						</div>
+					</div>
+				</div>
 
 			</div>
 
+			</main>
 		</section><!-- #content end -->
 
 		<!-- Footer
@@ -283,9 +471,9 @@
 					<div class="col_two_third">
 						<div class="col_one_third">
 							<div class="widget clearfix">
-								<img src="images/services/footer-logo.png" alt="" class="footer-logo">
-								<p>We <strong>streamline</strong> and let business <strong>flow naturally</strong>.  We manage with community at the <strong>center</strong> of our <strong>vision</strong>.</p>
-								<div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+								<img src="images/services/footer-logo.avif" alt="Tao Management footer logo" class="footer-logo" loading="lazy" decoding="async">
+								<p>We partner with organizations to <strong>streamline operations</strong>, <strong>implement technology</strong>, and <strong>drive measurable results</strong> across global markets.</p>
+								<div style="background: url('images/world-map.avif') no-repeat center center; background-size: 100%;">
 									<address>
 										<strong>Headquarters:</strong><br>
 										48 Wall Street<br>
@@ -311,42 +499,40 @@
 									<li><a href="https://taofinances.com/">Tao Finances</a></li>
 									<li><a href="https://taolingo.com/">Tao Lingo</a></li>
 									<li><a href="https://taoprecision.com/">Tao Precision</a></li>
-									<li><a href="https://taodreams.org/">Tao Dreams</a></li>
-									<li><a href="https://taosunshine.com/">Tao Sunshine</a></li>
 								</ul>
 							</div>
 						</div>
 						<div class="col_one_third col_last">
 							<div class="widget clearfix">
-								<h4>Tao Resources</h4>
+								<h4>Resources</h4>
 								<div id="post-list-footer">
 									<div class="spost clearfix">
 										<div class="entry-c">
 											<div class="entry-title">
-												<h4><a href="https://ignitecuriosity.org">Ignite Curiosity</a></h4>
+												<h4><a href="insights.html#case-studies">Case Studies</a></h4>
 											</div>
 											<ul class="entry-meta">
-												<li>Job Shadowing &amp; Internships</li>
+												<li>Real-world client outcomes</li>
 											</ul>
 										</div>
 									</div>
 									<div class="spost clearfix">
 										<div class="entry-c">
 											<div class="entry-title">
-												<h4><a href="https://thefocushive.com">The Focus Hive</a></h4>
+												<h4><a href="insights.html#perspectives">Perspectives</a></h4>
 											</div>
 											<ul class="entry-meta">
-												<li>Remote Agile Solution for Teams</li>
+												<li>Industry analysis and thought leadership</li>
 											</ul>
 										</div>
 									</div>
 									<div class="spost clearfix">
 										<div class="entry-c">
 											<div class="entry-title">
-												<h4><a href="https://amzn.to/2HnpSQV">Tao te Ching</a></h4>
+												<h4><a href="insights.html#white-papers">White Papers</a></h4>
 											</div>
 											<ul class="entry-meta">
-												<li>Zen Philosophy for Managers</li>
+												<li>In-depth research and methodology</li>
 											</ul>
 										</div>
 									</div>
@@ -359,27 +545,24 @@
 						<div class="widget clearfix" style="margin-bottom: -20px;">
 							<div class="row">
 								<div class="col-lg-6 bottommargin-sm">
-									<div class="counter counter-small"><span data-from="10" data-to="38446913" data-refresh-interval="80" data-speed="2650" data-comma="true"></span></div>
-									<h5 class="nobottommargin">Total Customers</h5>
+									<div class="counter counter-small"><span data-from="0" data-to="50" data-refresh-interval="80" data-speed="2000"></span>+</div>
+									<h5 class="nobottommargin">Enterprise Clients</h5>
 								</div>
 								<div class="col-lg-6 bottommargin-sm">
-									<div class="counter counter-small"><span data-from="50" data-to="3642" data-refresh-interval="50" data-speed="3000" data-comma="true"></span></div>
-									<h5 class="nobottommargin">Operations</h5>
+									<div class="counter counter-small"><span data-from="0" data-to="12" data-refresh-interval="50" data-speed="2000"></span>+</div>
+									<h5 class="nobottommargin">Countries Served</h5>
 								</div>
 							</div>
 						</div>
 						<div class="widget subscribe-widget clearfix">
-							<h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
+							<h5><strong>Subscribe</strong> to our newsletter for industry insights and consulting perspectives:</h5>
 							<div class="widget-subscribe-form-result"></div>
 							<form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 								<div class="input-group divcenter">
-									<div class="input-group-prepend">
-										<div class="input-group-text"><i class="icon-email2"></i></div>
-									</div>
+									<label for="widget-subscribe-form-email" class="visually-hidden">Email address</label>
+									<span class="input-group-text"><i class="icon-email2"></i></span>
 									<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-									<div class="input-group-append">
-										<button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
-									</div>
+									<button type="submit" class="btn btn-primary">Subscribe</button>
 								</div>
 							</form>
 						</div>
@@ -387,18 +570,18 @@
 						<div class="widget clearfix" style="margin-bottom: -20px;">
 							<div class="row">
 								<div class="col-lg-6 clearfix bottommargin-sm">
-									<a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+									<a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;" aria-label="Follow us on Facebook">
 										<i class="icon-facebook"></i>
 										<i class="icon-facebook"></i>
 									</a>
-									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Follow us</strong><br>on Facebook</small></a>
 								</div>
 								<div class="col-lg-6 clearfix">
-									<a href="#" class="social-icon si-dark si-colored si-rss nobottommargin" style="margin-right: 10px;">
-										<i class="icon-rss"></i>
-										<i class="icon-rss"></i>
+									<a href="#" class="social-icon si-dark si-colored si-linkedin nobottommargin" style="margin-right: 10px;" aria-label="Connect on LinkedIn">
+										<i class="icon-linkedin"></i>
+										<i class="icon-linkedin"></i>
 									</a>
-									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
+									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Connect</strong><br>on LinkedIn</small></a>
 								</div>
 							</div>
 						</div>
@@ -413,56 +596,36 @@
 				<div class="container clearfix">
 
 					<div class="col_half">
-						Copyrights &copy; 2020 All Rights Reserved by TaoLimited LLC<br>
+						Copyrights &copy; 2026 All Rights Reserved by TaoLimited LLC<br>
 						<div class="copyright-links"><a href="tos.html">Terms of Use</a> / <a href="privacy.html">Privacy Policy</a></div>
 					</div>
 
 					<div class="col_half col_last tright">
 						<div class="fright clearfix">
-							<a href="#" class="social-icon si-small si-borderless si-facebook">
+							<a href="#" class="social-icon si-small si-borderless si-facebook" aria-label="Facebook">
 								<i class="icon-facebook"></i>
 								<i class="icon-facebook"></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-twitter">
+							<a href="#" class="social-icon si-small si-borderless si-twitter" aria-label="Twitter">
 								<i class="icon-twitter"></i>
 								<i class="icon-twitter"></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-gplus">
-								<i class="icon-gplus"></i>
-								<i class="icon-gplus"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-pinterest">
-								<i class="icon-pinterest"></i>
-								<i class="icon-pinterest"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-vimeo">
-								<i class="icon-vimeo"></i>
-								<i class="icon-vimeo"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-github">
-								<i class="icon-github"></i>
-								<i class="icon-github"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-yahoo">
-								<i class="icon-yahoo"></i>
-								<i class="icon-yahoo"></i>
-							</a>
-
-							<a href="#" class="social-icon si-small si-borderless si-linkedin">
+							<a href="#" class="social-icon si-small si-borderless si-linkedin" aria-label="LinkedIn">
 								<i class="icon-linkedin"></i>
 								<i class="icon-linkedin"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-github" aria-label="GitHub">
+								<i class="icon-github"></i>
+								<i class="icon-github"></i>
 							</a>
 						</div>
 
 						<div class="clear"></div>
 
-						<i class="icon-envelope2"></i> info@taomgt.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +01-929-374-4853 <span class="middot">&middot;</span> <i class="icon-skype2"></i> TaoMGT
+						<i class="icon-envelope2"></i> info@taomgt.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +1-929-374-4853
 					</div>
 
 				</div>
@@ -479,282 +642,14 @@
 
 	<!-- External JavaScripts
 	============================================= -->
-	<script src="js/jquery.js"></script>
-	<script src="js/plugins.js"></script>
+	<script defer src="js/jquery.js"></script>
+	<script defer src="js/plugins.js"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="js/functions.js"></script>
+	<script defer src="js/functions.js"></script>
 
-	<script>
-		// Owl Carousel Scripts
-		$('#oc-features').owlCarousel({
-			items: 1,
-			margin: 60,
-		    nav: true,
-		    navText: ['<i class="icon-line-arrow-left"></i>','<i class="icon-line-arrow-right"></i>'],
-		    dots: false,
-		    stagePadding: 30,
-		    responsive:{
-				768: { items: 2 },
-				1200: { stagePadding: 200 }
-			},
-		});
-	</script>
-	
-	<!-- Charts JS
-	============================================= -->
-	<script src="js/chart.js"></script>
-	<script src="js/chart-utils.js"></script>
-
-	<script>
-
-		var randomScalingFactor = function() {
-			return Math.round(Math.random() * 100);
-		};
-
-		var chartColors = window.chartColors;
-		var color = Chart.helpers.color;
-		var config = {
-			data: {
-				datasets: [{
-					data: [
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-					],
-					backgroundColor: [
-						color(chartColors.red).alpha(0.5).rgbString(),
-						color(chartColors.orange).alpha(0.5).rgbString(),
-						color(chartColors.yellow).alpha(0.5).rgbString(),
-						color(chartColors.green).alpha(0.5).rgbString(),
-						color(chartColors.blue).alpha(0.5).rgbString(),
-						color(chartColors.indigo).alpha(0.5).rgbString(),
-						color(chartColors.purple).alpha(0.5).rgbString(),
-					],
-					label: 'Chakras' // for legend
-				}],
-				labels: [
-					"Root",
-					"Sacral",
-					"Solar Plexus",
-					"Heart",
-					"Throat",
-					"3rd Eye",
-					"Crown",
-				]
-			},
-			options: {
-				responsive: true,
-				legend: {
-					position: 'left',
-				},
-				title: {
-					display: true,
-					text: 'Curiosity Score Alignment'
-				},
-				scale: {
-				  ticks: {
-					beginAtZero: true
-				  },
-				  reverse: false
-				},
-				animation: {
-					animateRotate: false,
-					animateScale: true
-				}
-			}
-		};
-
-		window.onload = function() {
-			var ctx = document.getElementById("chakra");
-			window.myPolarArea = Chart.PolarArea(ctx, config);
-			
-			
-			var ctx = document.getElementById("annual").getContext("2d");
-			window.myBar = new Chart(ctx, {
-				type: 'bar',
-				data: barChartData,
-				options: {
-					responsive: true,
-					legend: {
-						position: 'top',
-					},
-					title: {
-						display: true,
-						text: 'Annual Returns'
-					}
-				}
-			});
-
-		};
-
-		document.getElementById('randomizeData').addEventListener('click', function() {
-			config.data.datasets.forEach(function(piece, i) {
-				piece.data.forEach(function(value, j) {
-					config.data.datasets[i].data[j] = randomScalingFactor();
-				});
-			});
-			window.myPolarArea.update();
-		});
-
-		var colorNames = Object.keys(window.chartColors);
-		document.getElementById('addData').addEventListener('click', function() {
-			if (config.data.datasets.length > 0) {
-				config.data.labels.push('data #' + config.data.labels.length);
-				config.data.datasets.forEach(function(dataset) {
-					var colorName = colorNames[config.data.labels.length % colorNames.length];
-					dataset.backgroundColor.push(window.chartColors[colorName]);
-					dataset.data.push(randomScalingFactor());
-				});
-				window.myPolarArea.update();
-			}
-		});
-		document.getElementById('removeData').addEventListener('click', function() {
-			config.data.labels.pop(); // remove the label first
-			config.data.datasets.forEach(function(dataset) {
-				dataset.backgroundColor.pop();
-				dataset.data.pop();
-			});
-			window.myPolarArea.update();
-		});
-
-	</script>
-	
-	<script>
-
-		var MONTHS = ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2020", "2020", "2020", "2021", "2022"];
-		var color = Chart.helpers.color;
-		var barChartData = {
-			labels: ["2011", "2012", "2013", "2014", "2015", "2016", "2017"],
-			datasets: [{
-				label: 'USA',
-				backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-				borderColor: window.chartColors.red,
-				borderWidth: 1,
-				data: [
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor()
-				]
-			}, {
-				label: 'Hong Kong',
-				backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-				borderColor: window.chartColors.blue,
-				borderWidth: 1,
-				data: [
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor()
-				]
-			}, {
-				label: 'Europe',
-				backgroundColor: color(window.chartColors.yellow).alpha(0.5).rgbString(),
-				borderColor: window.chartColors.yellow,
-				borderWidth: 1,
-				data: [
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor()
-				]
-			}, {
-				label: 'Central America',
-				backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
-				borderColor: window.chartColors.green,
-				borderWidth: 1,
-				data: [
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor()
-				]
-			}
-			  ]
-
-		};
-
-		
-
-		document.getElementById('randomizeData').addEventListener('click', function() {
-			var zero = Math.random() < 0.2 ? true : false;
-			barChartData.datasets.forEach(function(dataset) {
-				dataset.data = dataset.data.map(function() {
-					return zero ? 0.0 : randomScalingFactor();
-				});
-
-			});
-			window.myBar.update();
-		});
-
-		var colorNames = Object.keys(window.chartColors);
-		document.getElementById('addDataset').addEventListener('click', function() {
-			var colorName = colorNames[barChartData.datasets.length % colorNames.length];;
-			var dsColor = window.chartColors[colorName];
-			var newDataset = {
-				label: 'Dataset ' + barChartData.datasets.length,
-				backgroundColor: color(dsColor).alpha(0.5).rgbString(),
-				borderColor: dsColor,
-				borderWidth: 1,
-				data: []
-			};
-
-			for (var index = 0; index < barChartData.labels.length; ++index) {
-				newDataset.data.push(randomScalingFactor());
-			}
-
-			barChartData.datasets.push(newDataset);
-			window.myBar.update();
-		});
-
-		document.getElementById('addData').addEventListener('click', function() {
-			if (barChartData.datasets.length > 0) {
-				var month = MONTHS[barChartData.labels.length % MONTHS.length];
-				barChartData.labels.push(month);
-
-				for (var index = 0; index < barChartData.datasets.length; ++index) {
-					//window.myBar.addData(randomScalingFactor(), index);
-					barChartData.datasets[index].data.push(randomScalingFactor());
-				}
-
-				window.myBar.update();
-			}
-		});
-
-		document.getElementById('removeDataset').addEventListener('click', function() {
-			barChartData.datasets.splice(0, 1);
-			window.myBar.update();
-		});
-
-		document.getElementById('removeData').addEventListener('click', function() {
-			barChartData.labels.splice(-1, 1); // remove the label first
-
-			barChartData.datasets.forEach(function(dataset, datasetIndex) {
-				dataset.data.pop();
-			});
-
-			window.myBar.update();
-		});
-
-	</script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

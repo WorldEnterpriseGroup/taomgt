@@ -1,0 +1,1725 @@
+/* ----------------------------------------------------------------
+   Tao Management — Premium Consulting Design System
+   Custom overrides for Canvas template + WCAG 2.2 AA compliance
+-----------------------------------------------------------------*/
+
+/* ================================================================
+   1. DESIGN TOKENS
+   ================================================================ */
+:root {
+  /* Primary — refined teal, slightly desaturated for authority */
+  --primary: #00bed7;
+  --primary-dark: #009bb0;
+  --primary-light: #33cbe0;
+
+  /* Deep corporate palette */
+  --navy: #0c1829;
+  --charcoal: #1a2332;
+  --slate: #2d3a4a;
+
+  /* Neutrals */
+  --text: #1a1a2e;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --bg: #ffffff;
+  --bg-warm: #fafaf8;
+  --bg-alt: #f7f8fa;
+  --border: #e2e8f0;
+  --border-light: #edf2f7;
+
+  /* Accent / semantic */
+  --success: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --info: #17a2b8;
+
+  /* Typography scale */
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+
+  /* Eastern palette — ink, bamboo, stone */
+  --ink: #1a1a2e;
+  --bamboo: #7a8a5c;
+  --stone: #b5a99a;
+  --sand: #e8e0d4;
+  --rice-paper: #f5f0e8;
+
+  /* Spacing — zero-waste, edge-to-edge */
+  --section-gap: 0px;
+}
+
+/* ================================================================
+   HEADER — Premium consulting nav
+   ================================================================ */
+
+/* --- Logo dual-image swap --- */
+#logo {
+  padding-right: 30px !important;
+  margin-right: 30px !important;
+}
+
+#logo a {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  min-width: 120px;
+  padding: 0 !important;
+}
+
+.sticky-header #logo a {
+  height: 64px;
+}
+
+#logo img {
+  display: block;
+  height: auto !important;
+  width: 120px !important;
+  padding: 0 !important;
+  transition: opacity 0.3s ease;
+}
+
+/* Transparent header (over hero): show white logo, hide dark */
+.transparent-header:not(.sticky-header) #logo .logo-light { opacity: 1; }
+.transparent-header:not(.sticky-header) #logo .logo-dark { opacity: 0; position: absolute; }
+
+/* Sticky header (scrolled, white bg): show dark logo, hide white */
+.sticky-header #logo .logo-light { opacity: 0; position: absolute; }
+.sticky-header #logo .logo-dark { opacity: 1; }
+
+/* Mobile responsive header also shows dark logo */
+@media (max-width: 991px) {
+  #header.responsive-header-dark #logo .logo-light,
+  #header.dark #logo .logo-light { opacity: 0; position: absolute; }
+  #header.responsive-header-dark #logo .logo-dark,
+  #header.dark #logo .logo-dark { opacity: 1; }
+}
+
+/* --- Logo kanji accent — left of logo --- */
+.tao-logo-kanji {
+  font-size: 16px;
+  font-weight: 300;
+  margin-right: 8px;
+  vertical-align: middle;
+  opacity: 0.35;
+  color: #fff;
+  transition: opacity 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.sticky-header .tao-logo-kanji {
+  opacity: 0.3;
+  color: var(--text-muted);
+}
+
+/* On mobile, the visible logo must not be absolute so it flows after the kanji */
+@media (max-width: 991px) {
+  #header.responsive-header-dark #logo .logo-dark,
+  #header.dark #logo .logo-dark,
+  .transparent-header:not(.sticky-header) #logo .logo-dark {
+    position: relative !important;
+  }
+}
+
+/* --- Header bar --- */
+@media (min-width: 992px) {
+  #header,
+  #header-wrap {
+    height: 80px;
+    transition: height 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  #header.sticky-header:not(.static-sticky),
+  #header.sticky-header:not(.static-sticky) #header-wrap {
+    height: 64px;
+    background: rgba(255, 255, 255, 0.97) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 var(--border-light), 0 4px 24px rgba(0, 0, 0, 0.04);
+  }
+
+  /* --- Nav links — understated authority --- */
+  #primary-menu > ul > li > a {
+    font-family: var(--font-display) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    padding: 29px 18px !important;
+    color: rgba(255, 255, 255, 0.92) !important;
+    transition: color 0.25s ease !important;
+  }
+
+  /* Hover — just color shift, no decoration until the line appears */
+  #primary-menu > ul > li > a:hover {
+    color: #fff !important;
+  }
+
+  /* Active underline — 2px precise rule, not the SVG squiggle */
+  #primary-menu > ul > li > a > div::after {
+    content: '' !important;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary) !important;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    opacity: 1 !important;
+    width: auto !important;
+  }
+
+  #primary-menu > ul > li:hover > a > div::after,
+  #primary-menu > ul > li.active > a > div::after,
+  #primary-menu > ul > li > a[aria-current="page"] > div::after {
+    transform: scaleX(1) !important;
+    bottom: -2px !important;
+    opacity: 1 !important;
+  }
+
+  /* Sticky state — dark text on white */
+  .sticky-header #primary-menu > ul > li > a {
+    color: var(--text) !important;
+    padding: 21px 18px !important;
+  }
+
+  .sticky-header #primary-menu > ul > li > a:hover {
+    color: var(--primary) !important;
+  }
+
+  /* --- "Consulting" CTA link — subtle distinction --- */
+  #primary-menu > ul > li > a.tao-cta-nav {
+    margin-left: 8px;
+    position: relative;
+  }
+
+  #primary-menu > ul > li > a.tao-cta-nav > div::after {
+    display: none !important;
+  }
+
+  #primary-menu > ul > li > a.tao-cta-nav::after {
+    content: '';
+    position: absolute;
+    inset: 50% 0 auto 0;
+    transform: translateY(-50%);
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  #primary-menu > ul > li > a.tao-cta-nav:hover::after {
+    border-color: var(--primary);
+    background: rgba(0, 190, 215, 0.08);
+  }
+
+  /* CTA in sticky mode */
+  .sticky-header #primary-menu > ul > li > a.tao-cta-nav::after {
+    border-color: var(--primary);
+  }
+
+  .sticky-header #primary-menu > ul > li > a.tao-cta-nav:hover::after {
+    background: rgba(0, 190, 215, 0.06);
+  }
+
+  .sticky-header #primary-menu > ul > li > a.tao-cta-nav {
+    color: var(--primary) !important;
+  }
+}
+
+/* --- Mobile header: fix hamburger/logo overlap --- */
+@media (max-width: 991px) {
+  #header-wrap > .container {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 60px;
+  }
+
+  #primary-menu-trigger {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    order: -1;
+    flex-shrink: 0;
+    margin: 0 !important;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #logo {
+    display: flex !important;
+    align-items: center;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    text-align: left !important;
+    flex: 1;
+    justify-content: center;
+  }
+
+  #logo a {
+    height: 60px;
+  }
+
+  /* Spacer to balance the hamburger on the left */
+  #header-wrap > .container::after {
+    content: '';
+    width: 28px;
+    flex-shrink: 0;
+  }
+}
+
+/* --- Animated hamburger → X --- */
+#primary-menu-trigger {
+  background: none !important;
+  border: none !important;
+}
+
+#primary-menu-trigger i { display: none !important; }
+
+#primary-menu-trigger::before,
+#primary-menu-trigger::after,
+#primary-menu-trigger span.hamburger-line {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.25s ease;
+  position: absolute;
+  left: 50%;
+  margin-left: -11px;
+}
+
+#primary-menu-trigger::before { top: calc(50% - 6px); }
+#primary-menu-trigger::after { top: calc(50% + 6px); }
+
+/* Middle line via box-shadow on ::before since we only have 2 pseudo-elements */
+#primary-menu-trigger {
+  position: relative;
+}
+
+/* We need a real middle bar — use a gradient trick on the element itself */
+#primary-menu-trigger {
+  background: linear-gradient(currentColor, currentColor) no-repeat center / 22px 2px !important;
+  transition: background 0.25s ease;
+}
+
+/* When menu is open (Canvas adds .primary-menu-open or similar class) */
+body.primary-menu-open #primary-menu-trigger::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+body.primary-menu-open #primary-menu-trigger::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+body.primary-menu-open #primary-menu-trigger {
+  background: transparent !important;
+}
+
+/* Mobile nav: smooth slide animation */
+@media (max-width: 991px) {
+  /* Override the instant display toggle — keep menu as block but clip it */
+  #primary-menu > ul,
+  #primary-menu > div > ul {
+    display: block !important;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.35s ease;
+  }
+
+  /* When Canvas adds d-block (menu open), slide down smoothly */
+  #primary-menu > ul.d-block,
+  #primary-menu > div > ul.d-block {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  /* Stagger individual nav items for a cascading reveal */
+  #primary-menu > ul > li,
+  #primary-menu > div > ul > li {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  #primary-menu > ul.d-block > li,
+  #primary-menu > div > ul.d-block > li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #primary-menu > ul.d-block > li:nth-child(1) { transition-delay: 0.05s; }
+  #primary-menu > ul.d-block > li:nth-child(2) { transition-delay: 0.1s; }
+  #primary-menu > ul.d-block > li:nth-child(3) { transition-delay: 0.15s; }
+  #primary-menu > ul.d-block > li:nth-child(4) { transition-delay: 0.2s; }
+  #primary-menu > ul.d-block > li:nth-child(5) { transition-delay: 0.25s; }
+  #primary-menu > ul.d-block > li:nth-child(6) { transition-delay: 0.3s; }
+  #primary-menu > ul.d-block > li:nth-child(7) { transition-delay: 0.35s; }
+
+  #primary-menu > ul > li > a {
+    font-family: var(--font-display) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+  }
+
+  #primary-menu > ul > li > a > div::after {
+    display: none !important;
+  }
+}
+
+/* ================================================================
+   2. GLOBAL TYPOGRAPHY & BODY
+   ================================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tighter, more refined heading treatment */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.01em;
+}
+
+/* Body text — slightly more spacious line height */
+p {
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* ================================================================
+   3. HERO / SLIDER REFINEMENTS
+   ================================================================ */
+
+/* Dark overlay for hero readability — heavy for white text legibility */
+.swiper-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 24, 41, 0.55) 0%,
+    rgba(12, 24, 41, 0.78) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.swiper-slide .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero typography — authoritative, editorial */
+.slider-caption h1,
+.slider-caption h2 {
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+}
+
+.slider-caption p {
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  opacity: 1;
+  letter-spacing: 0.01em;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+  font-size: 1.15rem !important;
+}
+
+/* Give the hero content breathing room so the CTA isn't scrunched */
+.slider-caption-center {
+  padding-bottom: 40px !important;
+}
+
+/* Hero CTA button — prominent and inviting */
+.slider-caption .button,
+.slider-caption .button.button-rounded,
+.slider-caption .button.button-large {
+  border-radius: 6px !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 700 !important;
+  padding: 18px 52px !important;
+  margin-top: 28px !important;
+  text-transform: uppercase !important;
+  font-size: 16px !important;
+  line-height: 1.2 !important;
+  height: auto !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background: var(--primary) !important;
+  color: #fff !important;
+  border: 2px solid var(--primary) !important;
+  box-shadow: 0 4px 20px rgba(0, 190, 215, 0.3);
+  display: inline-block;
+}
+
+.slider-caption .button:hover,
+.slider-caption .button.button-rounded:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 190, 215, 0.45);
+  background: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+/* Scroll arrow pulse animation */
+.one-page-arrow span {
+  animation: pulse-down 2s ease-in-out infinite;
+}
+
+@keyframes pulse-down {
+  0%, 100% { transform: rotate(45deg) translateY(0); opacity: 1; }
+  50% { transform: rotate(45deg) translateY(4px); opacity: 0.6; }
+}
+
+/* ================================================================
+   4. SECTION HEADINGS — Large ghost letter treatment
+   ================================================================ */
+
+/* Refine the Canvas template's heading ghost letter */
+.heading-block:before {
+  color: var(--bg-alt) !important;
+  font-weight: 800 !important;
+  opacity: 0.7;
+}
+
+.heading-block h2 {
+  font-weight: 700 !important;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+/* ================================================================
+   5. SERVICE / FEATURE CARDS
+   ================================================================ */
+.feature-box.media-box.fbox-bg {
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--bg);
+}
+
+.feature-box.media-box.fbox-bg:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border-color: transparent;
+}
+
+.feature-box.media-box .fbox-media img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-box.media-box:hover .fbox-media img {
+  transform: scale(1.03);
+}
+
+.feature-box h3 {
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  color: var(--text);
+}
+
+.feature-box h3 .subtitle {
+  color: var(--text-secondary) !important;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+/* "Explore" links */
+.button-link.color {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.button-link.color:hover {
+  letter-spacing: 0.1em;
+}
+
+/* ================================================================
+   6. APPROACH / PROCESS SECTION
+   ================================================================ */
+.feature-box.fbox-plain .fbox-content h3 {
+  color: var(--text) !important;
+  font-weight: 700 !important;
+}
+
+.feature-box.fbox-plain .fbox-content p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ================================================================
+   7. STATS / COUNTER SECTION
+   ================================================================ */
+.counter.counter-large {
+  font-weight: 800 !important;
+  letter-spacing: -0.03em;
+}
+
+/* ================================================================
+   8. INDUSTRY BUTTONS
+   ================================================================ */
+.button.button-light {
+  border: 1px solid var(--border) !important;
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  border-radius: 2px !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.button.button-light:hover {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+/* ================================================================
+   9. PAGE TITLE / HERO BANNERS (inner pages)
+   ================================================================ */
+#page-title.page-title-parallax {
+  position: relative;
+}
+
+#page-title.page-title-parallax::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 24, 41, 0.25) 0%,
+    rgba(12, 24, 41, 0.45) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+#page-title .container {
+  position: relative;
+  z-index: 2;
+}
+
+#page-title h1 {
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* ================================================================
+   10. BUTTONS — GLOBAL REFINEMENT
+   ================================================================ */
+.button.button-rounded {
+  border-radius: 2px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase;
+  font-size: 13px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.button.button-rounded:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 190, 215, 0.3);
+}
+
+/* ================================================================
+   11. FOOTER — ELEVATED
+   ================================================================ */
+#footer {
+  border-top: 1px solid var(--border-light);
+}
+
+#footer h4 {
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  margin-bottom: 1.2rem;
+}
+
+#copyrights {
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+
+/* ================================================================
+   12. FAQ TOGGLES
+   ================================================================ */
+.toggle .togglet {
+  font-weight: 600 !important;
+  color: var(--text) !important;
+  transition: color 0.2s ease;
+}
+
+.toggle .togglet:hover {
+  color: var(--primary) !important;
+}
+
+/* ================================================================
+   13. FORM INPUTS — CONSULTING PAGE
+   ================================================================ */
+.form-control:focus,
+.sm-form-control:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(0, 190, 215, 0.12) !important;
+}
+
+/* ================================================================
+   14. RESPONSIVE REFINEMENTS
+   ================================================================ */
+@media (max-width: 991px) {
+  .slider-caption h1,
+  .slider-caption h2 {
+    font-size: 2.2rem !important;
+  }
+
+  .slider-caption p {
+    font-size: 1rem !important;
+  }
+
+  .slider-caption .button,
+  .slider-caption .button.button-rounded {
+    padding: 14px 36px !important;
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-caption h1,
+  .slider-caption h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .slider-caption .button,
+  .slider-caption .button.button-rounded {
+    padding: 12px 28px !important;
+    font-size: 13px !important;
+    letter-spacing: 0.06em !important;
+    margin-top: 16px !important;
+  }
+
+  :root {
+    --section-gap: 2rem;
+  }
+}
+
+/* ================================================================
+   15. ACCESSIBILITY — WCAG 2.2 AA
+   ================================================================ */
+
+/* Skip-to-content link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  z-index: 99999;
+  background: var(--navy);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+  top: 0;
+}
+
+/* Visible focus indicator */
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Below-fold render optimization */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* Minimum touch target — WCAG 2.2 */
+button, a, input, select, textarea {
+  min-height: 24px;
+  min-width: 24px;
+}
+
+/* ================================================================
+   16. SUBTLE SCROLL ANIMATIONS (CSS-only, no JS libraries)
+   ================================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .feature-box,
+  .heading-block,
+  .toggle {
+    animation: fade-up 0.6s ease both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ================================================================
+   17. SELECTION COLOR
+   ================================================================ */
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+
+/* ================================================================
+   18. BELOW-FOLD — Premium Sections
+   ================================================================ */
+
+/* --- Shared typography for tao-* sections --- */
+.tao-kicker {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.tao-kicker--center { text-align: center; }
+
+.tao-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+}
+
+.tao-lead {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.tao-section-header {
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* --- Section 1: Capabilities — zero-margin, angular --- */
+.tao-cap-section {
+  padding: 0;
+  position: relative;
+}
+
+.tao-cap-section > .container {
+  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.tao-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+  text-transform: uppercase;
+}
+
+.tao-cap-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.tao-cap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: clamp(300px, 45vh, 440px);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  background-size: cover;
+  background-position: center;
+  color: #fff !important;
+  text-decoration: none !important;
+  overflow: hidden;
+}
+
+.tao-cap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 24, 41, 0.35) 0%, rgba(12, 24, 41, 0.92) 100%);
+  transition: background 0.5s ease;
+}
+
+.tao-cap:hover::before {
+  background: linear-gradient(180deg, rgba(0, 190, 215, 0.12) 0%, rgba(12, 24, 41, 0.95) 100%);
+}
+
+/* AI card: uses photo like the others, teal-tinted overlay */
+.tao-cap--ai::before {
+  background: linear-gradient(180deg, rgba(0, 50, 60, 0.4) 0%, rgba(12, 24, 41, 0.93) 100%);
+}
+
+.tao-cap--ai:hover::before {
+  background: linear-gradient(180deg, rgba(0, 190, 215, 0.15) 0%, rgba(12, 24, 41, 0.95) 100%);
+}
+
+/* Ghost index number */
+.tao-cap-idx {
+  position: absolute;
+  top: -0.12em;
+  right: 0.05em;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 11vw, 9rem);
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.05);
+  letter-spacing: -0.06em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  transition: color 0.5s ease;
+}
+
+.tao-cap:hover .tao-cap-idx {
+  color: rgba(0, 190, 215, 0.1);
+}
+
+.tao-cap-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.tao-cap-inner h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+  color: #fff !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.tao-cap-inner p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 0.85rem;
+  max-width: 260px;
+  transition: color 0.4s ease;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.tao-cap:hover .tao-cap-inner p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.tao-cap-arrow {
+  display: inline-block;
+  font-size: 1.3rem;
+  color: var(--primary);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tao-cap:hover .tao-cap-arrow {
+  transform: translateX(8px);
+}
+
+@media (max-width: 991px) {
+  .tao-cap-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 575px) {
+  .tao-cap-grid { grid-template-columns: 1fr; }
+  .tao-cap { min-height: 260px; }
+}
+
+/* --- Section 2: Platform Partners --- */
+.tao-platforms {
+  padding: clamp(1.25rem, 2.5vw, 2rem) 0;
+  border: none;
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+}
+
+.tao-platform-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  flex-wrap: wrap;
+}
+
+.tao-platform-logo--accent {
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.tao-platform-logo {
+  color: rgba(255,255,255,0.4);
+  opacity: 1;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.tao-platform-logo:hover {
+  color: rgba(255,255,255,0.75);
+}
+
+.tao-platform-logo svg {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+/* --- Section 3: Methodology — zen garden + angular --- */
+.tao-approach {
+  position: relative;
+  padding: clamp(4rem, 8vw, 7rem) 0 clamp(5rem, 10vw, 8rem);
+  background: var(--navy);
+  overflow: hidden;
+  view-timeline: --approach block;
+}
+
+/* Zen sand-raked pattern overlay */
+.tao-approach::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 190, 215, 0.03) 0%, transparent 50%),
+    repeating-conic-gradient(rgba(255,255,255,0.008) 0% 25%, transparent 0% 50%) 0 0 / 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tao-approach > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Scroll-driven progress bar at top */
+.tao-approach-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  z-index: 2;
+}
+
+.tao-approach-progress-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+/* Light-on-dark text variants */
+.tao-kicker--light { color: var(--primary-light); }
+.tao-h2--light { color: #fff; }
+
+.tao-approach-intro {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+}
+
+/* Horizontal track with 3 connected nodes */
+.tao-approach-track {
+  position: relative;
+  height: 48px;
+  margin: clamp(2rem, 4vw, 3.5rem) 0;
+  display: flex;
+  align-items: center;
+}
+
+.tao-approach-track-line {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tao-approach-track-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary), color-mix(in oklch, var(--primary) 60%, white));
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.tao-approach-track-node {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  background: var(--navy);
+  z-index: 1;
+}
+
+.tao-approach-track-node--1 { left: 0; }
+.tao-approach-track-node--2 { left: 50%; margin-left: -6px; }
+.tao-approach-track-node--3 { right: 0; }
+
+/* 3-column step cards */
+.tao-approach-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+/* Individual step card */
+.tao-approach-step {
+  position: relative;
+  padding: clamp(2rem, 3vw, 2.75rem);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: background 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
+}
+
+.tao-approach-step:hover {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: color-mix(in oklch, var(--primary) 25%, transparent);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25),
+              0 0 0 1px rgba(0, 190, 215, 0.08) inset;
+}
+
+/* Massive ghost watermark — kanji characters */
+.tao-step-ghost {
+  position: absolute;
+  top: -0.1em;
+  right: 0.05em;
+  font-family: serif;
+  font-size: clamp(8rem, 14vw, 13rem);
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.025);
+  letter-spacing: 0;
+  pointer-events: none;
+  user-select: none;
+  transition: color 0.5s ease;
+}
+
+.tao-approach-step:hover .tao-step-ghost {
+  color: rgba(0, 190, 215, 0.055);
+}
+
+/* Step body — teal accent border */
+.tao-step-body {
+  position: relative;
+  z-index: 1;
+  padding-left: 1.25rem;
+  border-left: 3px solid rgba(0, 190, 215, 0.25);
+  transition: border-color 0.4s ease;
+}
+
+.tao-approach-step:hover .tao-step-body {
+  border-left-color: var(--primary);
+}
+
+.tao-step-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.85rem;
+}
+
+.tao-step-body h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.85rem;
+  letter-spacing: -0.02em;
+}
+
+.tao-step-body p {
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.48);
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+.tao-approach-step:hover .tao-step-body p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+/* --- Section 4: Parallax Statement — zen garden bg --- */
+.tao-statement {
+  position: relative;
+  padding: clamp(4rem, 8vw, 6rem) 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.tao-statement-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 24, 41, 0.82) 0%,
+    rgba(12, 24, 41, 0.92) 100%
+  );
+  pointer-events: none;
+}
+
+.tao-statement .container {
+  position: relative;
+  z-index: 2;
+}
+
+.tao-statement-inner {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tao-blockquote {
+  border: none;
+  margin: 0 0 3.5rem;
+  padding: 0;
+}
+
+.tao-blockquote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 300;
+  line-height: 1.4;
+  color: #fff;
+  letter-spacing: -0.015em;
+  font-style: italic;
+  text-transform: none;
+}
+
+.tao-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  flex-wrap: wrap;
+}
+
+.tao-stat {
+  text-align: center;
+}
+
+.tao-stat-number {
+  font-family: var(--font-display) !important;
+  font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
+  font-weight: 800 !important;
+  color: var(--primary) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 0.5rem;
+}
+
+.tao-stat-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- Section 5: Featured Insight — yin/yang wave top --- */
+.tao-insight {
+  position: relative;
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  background: var(--bg);
+}
+
+.tao-insight-metrics {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.tao-metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.tao-metric strong {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.tao-metric span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  margin-top: 0.25rem;
+}
+
+.tao-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary) !important;
+  transition: gap 0.3s ease;
+}
+
+.tao-text-link:hover {
+  gap: 0.85rem;
+  color: var(--primary-dark) !important;
+}
+
+.tao-insight-visual {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.1);
+}
+
+.tao-insight-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Section 6: Industries --- */
+.tao-industries {
+  padding: 0;
+  background: var(--rice-paper);
+}
+
+.tao-industries > .container {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.tao-industry-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  background: rgba(0,0,0,0.04);
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.tao-industry {
+  background: var(--rice-paper);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  text-decoration: none !important;
+  color: inherit;
+  transition: background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tao-industry:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+.tao-industry-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+  color: var(--primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tao-industry:hover .tao-industry-icon {
+  background: rgba(0, 190, 215, 0.15);
+  color: var(--primary-light);
+}
+
+.tao-industry h3 {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.tao-industry:hover h3 {
+  color: #fff;
+}
+
+.tao-industry p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.tao-industry:hover p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 991px) {
+  .tao-industry-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .tao-industry-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- Section 7: CTA — yin/yang curve + angular --- */
+.tao-cta {
+  position: relative;
+  padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+  background: var(--navy);
+}
+
+.tao-cta-inner {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tao-cta-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.04em;
+  text-transform: none;
+  margin: 0 0 0.75rem;
+}
+
+.tao-cta-inner p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 2rem;
+}
+
+.tao-cta-button {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 18px 52px;
+  background: var(--primary);
+  color: #fff !important;
+  border: 2px solid var(--primary);
+  border-radius: 3px;
+  text-decoration: none !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tao-cta-button:hover {
+  background: transparent;
+  color: var(--primary) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 190, 215, 0.25);
+}
+
+/* --- Scroll animations for tao-* sections --- */
+@media (prefers-reduced-motion: no-preference) {
+  .tao-cap,
+  .tao-industry,
+  .tao-insight-visual,
+  .tao-stat,
+  .tao-blockquote {
+    animation: fade-up 0.6s ease both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 25%;
+  }
+}
+
+/* --- Methodology: scroll-driven animations --- */
+@media (prefers-reduced-motion: no-preference) {
+  .tao-approach-progress-fill {
+    animation: approach-fill 1s linear both;
+    animation-timeline: --approach;
+    animation-range: cover 0% cover 100%;
+  }
+
+  @keyframes approach-fill {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .tao-approach-track-line::after {
+    animation: track-fill 1s linear both;
+    animation-timeline: --approach;
+    animation-range: cover 15% cover 65%;
+  }
+
+  @keyframes track-fill {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .tao-approach-track-node {
+    animation: node-glow 0.3s ease both;
+    animation-timeline: --approach;
+  }
+
+  .tao-approach-track-node--1 { animation-range: cover 10% cover 18%; }
+  .tao-approach-track-node--2 { animation-range: cover 30% cover 40%; }
+  .tao-approach-track-node--3 { animation-range: cover 50% cover 58%; }
+
+  @keyframes node-glow {
+    from {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: var(--navy);
+      box-shadow: 0 0 0 0 transparent;
+    }
+    to {
+      border-color: var(--primary);
+      background: var(--primary);
+      box-shadow: 0 0 12px rgba(0, 190, 215, 0.35);
+    }
+  }
+
+  .tao-approach-step {
+    animation: step-slide 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+
+  @keyframes step-slide {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* --- Methodology: responsive --- */
+@media (max-width: 991px) {
+  .tao-approach-steps {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .tao-approach-track {
+    display: none;
+  }
+
+  .tao-step-ghost {
+    font-size: 6rem;
+  }
+}
+
+/* --- Yin/Yang wave SVG separator --- */
+.tao-wave-sep {
+  display: block;
+  width: 100%;
+  height: clamp(40px, 6vw, 80px);
+  position: relative;
+  z-index: 2;
+}
+
+.tao-wave-sep--dark { background: var(--navy); }
+.tao-wave-sep--light { background: var(--bg); }
+.tao-wave-sep--rice { background: var(--rice-paper); }
+.tao-wave-sep--navy-to-light svg { fill: var(--bg); }
+.tao-wave-sep--light-to-rice svg { fill: var(--rice-paper); }
+.tao-wave-sep--rice-to-navy svg { fill: var(--navy); }
+
+.tao-wave-sep svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Enso circle decoration --- */
+.tao-enso {
+  position: absolute;
+  width: clamp(200px, 30vw, 400px);
+  height: clamp(200px, 30vw, 400px);
+  border: clamp(4px, 0.6vw, 8px) solid rgba(0, 190, 215, 0.06);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  /* Enso break — the incomplete circle */
+  border-top-color: transparent;
+  transform: rotate(-30deg);
+}
+
+.tao-enso--right {
+  top: 10%;
+  right: -8%;
+}
+
+.tao-enso--left {
+  bottom: 15%;
+  left: -8%;
+}
+
+/* --- Sharp arrow divider between sections --- */
+.tao-arrow-div {
+  width: 100%;
+  height: clamp(30px, 4vw, 50px);
+  position: relative;
+  z-index: 3;
+}
+
+.tao-arrow-div--down {
+  background: linear-gradient(to right, var(--bg) 50%, var(--bg) 50%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* --- Kaizen strip (Toyota method reference) --- */
+.tao-kaizen-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(0.5rem, 1vw, 0.75rem) 0;
+  background: var(--primary);
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.tao-kaizen-strip span {
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.tao-kaizen-strip span::before {
+  content: '◆';
+  margin-right: 0.75em;
+  font-size: 0.6em;
+  vertical-align: middle;
+}
+
+/* --- Yin-yang image decoration --- */
+.tao-yinyang-float {
+  position: absolute;
+  width: clamp(120px, 18vw, 220px);
+  height: clamp(120px, 18vw, 220px);
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tao-yinyang-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* --- Content wrap — kill default bottom padding --- */
+.content-wrap.nobottompadding {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* --- Parallax fallback for mobile --- */
+@media (max-width: 991px) {
+  .tao-statement {
+    background-attachment: scroll;
+  }
+  .tao-enso { display: none; }
+}
+
+/* --- Override Canvas default content-wrap padding --- */
+.content-wrap {
+  padding: 0 !important;
+}
