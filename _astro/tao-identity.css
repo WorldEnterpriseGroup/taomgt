@@ -6,29 +6,21 @@
   --tao-line: color-mix(in srgb, var(--tao-yin) 18%, transparent);
 }
 
-.logo-wrapper {
-  align-items: center;
-  display: inline-flex;
-  gap: 0.8rem;
-}
-
-.logo-wrapper::after {
-  background: url("./tao-mark.svg") center / contain no-repeat;
-  content: "";
-  display: block;
-  flex: 0 0 2rem;
-  height: 2rem;
-  transition: transform 500ms cubic-bezier(.2,.8,.2,1);
-  width: 2rem;
-}
-
-.logo-wrapper:hover::after,
-.logo-wrapper:focus-visible::after {
-  transform: rotate(180deg);
-}
-
 .btn {
   border-radius: 999px 1rem 999px 1rem;
+}
+
+.sota-home-hero-art,
+.home-material__primary,
+.home-material__rail figure {
+  border-radius: 2rem .35rem 2rem .35rem;
+  overflow: hidden;
+}
+
+.sota-home-hero-art img,
+.home-material__primary img,
+.home-material__rail figure img {
+  border-radius: 1.5rem .25rem 1.5rem .25rem;
 }
 
 .tao-philosophy {
@@ -125,14 +117,6 @@
   width: 100%;
 }
 
-.tao-philosophy__disc {
-  fill: var(--tao-yin);
-}
-
-.tao-philosophy__disc-light {
-  fill: var(--tao-paper);
-}
-
 .tao-philosophy__curve {
   fill: none;
   stroke: var(--tao-yang);
@@ -153,12 +137,12 @@
   position: absolute;
 }
 
-.tao-philosophy__label--yin {
+.tao-philosophy__label--receive {
   left: 2%;
   top: 19%;
 }
 
-.tao-philosophy__label--yang {
+.tao-philosophy__label--act {
   bottom: 19%;
   right: 2%;
 }
@@ -170,17 +154,131 @@
   transform: translate(-50%, -50%) rotate(-90deg);
 }
 
+.tao-business-system {
+  background: #0e2030;
+  border: 1px solid #f4eddd40;
+  box-shadow: 0 1.7rem 4rem -3rem #030c17cc;
+  color: #fbf8ef;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.tao-business-system__header,
+.tao-business-system__footer {
+  align-items: center;
+  color: #fbf8efb8;
+  display: flex;
+  font-size: .61rem;
+  font-weight: 700;
+  gap: 1rem;
+  justify-content: space-between;
+  letter-spacing: .13em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.tao-business-system__stage {
+  background:
+    radial-gradient(circle at 50% 50%, #f4eddd18, transparent 32%),
+    #0a1b2b;
+  border: 1px solid #f4eddd38;
+  min-height: clamp(22rem, 36vw, 31rem);
+  overflow: hidden;
+  perspective: 900px;
+  position: relative;
+}
+
+.tao-business-system__stage::before,
+.tao-business-system__stage::after {
+  border: 1px solid #f4eddd42;
+  border-radius: 50%;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateX(62deg) rotateZ(-16deg);
+}
+
+.tao-business-system__stage::before {
+  height: 54%;
+  width: 74%;
+}
+
+.tao-business-system__stage::after {
+  border-color: #d3aa5d62;
+  height: 78%;
+  transform: translate(-50%, -50%) rotateX(62deg) rotateZ(18deg);
+  width: 46%;
+}
+
+.tao-business-system__stage svg {
+  display: block;
+  height: 100%;
+  inset: 0;
+  overflow: visible;
+  position: absolute;
+  width: 100%;
+}
+
+.tao-business-system__field {
+  fill: none;
+  opacity: .75;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.tao-business-system__field--quiet {
+  opacity: .3;
+  stroke: #f4eddd;
+}
+
+.tao-business-system__field--gold {
+  stroke: #d3aa5d;
+}
+
+.tao-business-system__center {
+  fill: #f4eddd;
+  filter: drop-shadow(0 0 .7rem #d3aa5d66);
+}
+
+.tao-business-system__center-label {
+  fill: #172532;
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: .18em;
+  text-anchor: middle;
+  text-transform: uppercase;
+}
+
+.tao-business-system__node {
+  background: #091f31e8;
+  border: 1px solid #f4eddd66;
+  box-shadow: .35rem .35rem 0 #d3aa5d26;
+  color: #fffdf7;
+  font-size: clamp(.62rem, 1vw, .8rem);
+  letter-spacing: .11em;
+  padding: .65rem .75rem;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.tao-business-system__node--purpose { left: 50%; top: 10%; transform: translateX(-50%); }
+.tao-business-system__node--people { left: 8%; top: 42%; }
+.tao-business-system__node--process { bottom: 12%; left: 19%; }
+.tao-business-system__node--technology { bottom: 12%; right: 15%; }
+.tao-business-system__node--evidence { right: 7%; top: 42%; }
+.tao-business-system__node--change { right: 17%; top: 16%; }
+
+.tao-business-system__footer {
+  margin-top: .8rem;
+}
+
 @keyframes tao-path-draw {
   to { stroke-dashoffset: 0; }
 }
 
 @media (max-width: 760px) {
-  .logo-wrapper::after {
-    flex-basis: 1.6rem;
-    height: 1.6rem;
-    width: 1.6rem;
-  }
-
   .tao-philosophy {
     grid-template-columns: 1fr;
   }
@@ -197,10 +295,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-wrapper::after,
   .tao-philosophy__curve {
     animation: none;
-    transition: none;
   }
 
   .tao-philosophy__curve {
