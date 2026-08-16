@@ -612,3 +612,63 @@
   .tao-sequence__step,
   .tao-inline-link span { transition: none; }
 }
+
+/* Layered middle-path field */
+.tao-philosophy__visual {
+  min-height: clamp(22rem, 34vw, 31rem);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--tao-yang) 18%, transparent), transparent 24%),
+    linear-gradient(145deg, color-mix(in srgb, var(--tao-paper) 96%, var(--tao-yang)), var(--tao-paper));
+  border: 1px solid color-mix(in srgb, var(--tao-yin) 14%, transparent);
+  border-radius: 4rem .6rem 4rem .6rem;
+}
+
+.tao-philosophy__visual::before,
+.tao-philosophy__visual::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--tao-yin) 14%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tao-philosophy__visual::before { width: 72%; height: 72%; inset: 14%; transform: rotate(28deg); }
+.tao-philosophy__visual::after { width: 110%; height: 46%; top: 27%; left: -5%; transform: rotate(-18deg); border-color: color-mix(in srgb, var(--tao-yang) 28%, transparent); }
+.tao-philosophy__visual svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.tao-philosophy__orbit { fill: none; stroke: color-mix(in srgb, var(--tao-yin) 13%, transparent); stroke-width: 1; transform-origin: center; animation: tao-orbit-turn 28s linear infinite; }
+.tao-philosophy__orbit--two { transform: rotate(90deg); stroke: color-mix(in srgb, var(--tao-yang) 27%, transparent); animation-direction: reverse; animation-duration: 34s; }
+.tao-philosophy__curve { stroke: var(--tao-yang); stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 0; filter: drop-shadow(0 0 .3rem color-mix(in srgb, var(--tao-yang) 45%, transparent)); }
+.tao-philosophy__curve--quiet { stroke: color-mix(in srgb, var(--tao-yin) 16%, transparent); stroke-width: 9; filter: none; }
+.tao-philosophy__countercurve { fill: none; stroke: color-mix(in srgb, var(--tao-yin) 24%, transparent); stroke-width: 1.5; stroke-dasharray: 3 9; }
+.tao-philosophy__core { fill: var(--tao-yin); stroke: color-mix(in srgb, var(--tao-yang) 70%, white); stroke-width: 1.5; filter: drop-shadow(0 1rem 1.2rem #17253255); }
+.tao-philosophy__core-glow { fill: var(--tao-yang); filter: drop-shadow(0 0 .7rem var(--tao-yang)); animation: tao-core-pulse 3.4s ease-in-out infinite; }
+.tao-philosophy__node { fill: var(--tao-yang); stroke: var(--tao-paper); stroke-width: 5; filter: drop-shadow(0 0 .35rem color-mix(in srgb, var(--tao-yang) 70%, transparent)); }
+.tao-philosophy__visual-core { position: absolute; top: 50%; left: 50%; display: grid; gap: .35rem; width: 7.5rem; color: #fffdf8; text-align: center; transform: translate(-50%, -50%) rotate(-5deg); }
+.tao-philosophy__visual-core span,
+.tao-philosophy__orbit-label { color: var(--tao-yang); font-size: .58rem; font-weight: 750; letter-spacing: .15em; text-transform: uppercase; }
+.tao-philosophy__visual-core strong { font-size: 1.05rem; line-height: 1.05; }
+.tao-philosophy__orbit-label { position: absolute; color: var(--tao-muted); }
+.tao-philosophy__orbit-label--receive { top: 23%; left: 12%; }
+.tao-philosophy__orbit-label--hold { top: 23%; right: 12%; }
+.tao-philosophy__orbit-label--act { right: 12%; bottom: 23%; }
+.tao-philosophy__orbit-label--learn { bottom: 23%; left: 12%; }
+
+@keyframes tao-orbit-turn { to { transform: rotate(360deg); } }
+@keyframes tao-core-pulse { 50% { transform: scale(1.6); opacity: .65; } }
+
+@media (max-width: 760px) {
+  .tao-philosophy__visual { min-height: 24rem; }
+  .tao-philosophy__orbit-label--receive { left: 7%; }
+  .tao-philosophy__orbit-label--hold { right: 7%; }
+  .tao-philosophy__orbit-label--act { right: 7%; }
+  .tao-philosophy__orbit-label--learn { left: 7%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tao-philosophy__orbit,
+  .tao-philosophy__core-glow { animation: none; }
+}

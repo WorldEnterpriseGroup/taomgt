@@ -95,15 +95,25 @@
     </div>
   </div>
   <div class="tao-philosophy__visual" aria-hidden="true">
-    <svg viewBox="0 0 800 500" role="presentation">
-      <path class="tao-philosophy__curve tao-philosophy__curve--quiet" pathLength="1" d="M410 18C220 84 220 168 410 250S600 416 410 482"/>
-      <path class="tao-philosophy__curve" pathLength="1" d="M410 18C220 84 220 168 410 250S600 416 410 482"/>
-      <circle cx="410" cy="250" r="12" fill="var(--tao-yang)"/>
-    </svg>
-    <span class="tao-philosophy__label tao-philosophy__label--receive">receive</span>
-    <span class="tao-philosophy__label tao-philosophy__label--act">act</span>
-    <span class="tao-philosophy__label tao-philosophy__label--middle">middle path</span>
-  </div>
+      <svg viewBox="0 0 520 520" role="presentation" focusable="false">
+        <ellipse class="tao-philosophy__orbit tao-philosophy__orbit--one" cx="260" cy="260" rx="211" ry="126"/>
+        <ellipse class="tao-philosophy__orbit tao-philosophy__orbit--two" cx="260" cy="260" rx="211" ry="126"/>
+        <path class="tao-philosophy__curve tao-philosophy__curve--quiet" d="M260 24C86 83 86 174 260 260S434 437 260 496"/>
+        <path class="tao-philosophy__curve" pathLength="1" d="M260 24C86 83 86 174 260 260S434 437 260 496"/>
+        <path class="tao-philosophy__countercurve" d="M260 24C434 83 434 174 260 260S86 437 260 496"/>
+        <circle class="tao-philosophy__core" cx="260" cy="260" r="70"/>
+        <circle class="tao-philosophy__core-glow" cx="260" cy="260" r="10"/>
+        <circle class="tao-philosophy__node tao-philosophy__node--receive" cx="119" cy="145" r="6"/>
+        <circle class="tao-philosophy__node tao-philosophy__node--hold" cx="401" cy="145" r="6"/>
+        <circle class="tao-philosophy__node tao-philosophy__node--act" cx="401" cy="375" r="6"/>
+        <circle class="tao-philosophy__node tao-philosophy__node--learn" cx="119" cy="375" r="6"/>
+      </svg>
+      <div class="tao-philosophy__visual-core"><span>the middle path</span><strong>steady movement</strong></div>
+      <span class="tao-philosophy__orbit-label tao-philosophy__orbit-label--receive">receive</span>
+      <span class="tao-philosophy__orbit-label tao-philosophy__orbit-label--hold">hold</span>
+      <span class="tao-philosophy__orbit-label tao-philosophy__orbit-label--act">act</span>
+      <span class="tao-philosophy__orbit-label tao-philosophy__orbit-label--learn">learn</span>
+    </div>
 </section>
 <section class="home-principles tao-field-section" aria-labelledby="principles-title">
   <div class="container home-principles__layout">
