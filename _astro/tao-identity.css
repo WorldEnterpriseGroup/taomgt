@@ -825,3 +825,20 @@
   background: transparent !important;
   text-shadow: 0 1px 1px color-mix(in srgb, var(--tao-yin) 38%, transparent);
 }
+
+/* Final quieting: minimal S amplitude, no caption blocks beyond the photo. */
+.sota-home-hero-art figcaption,
+.home-material__primary figcaption,
+.home-material__rail figure figcaption {
+  display: none !important;
+}
+
+.sota-home-hero-art img {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M100 0H34C42 22 42 34 34 50C26 66 26 78 34 100H100Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M100 0H34C42 22 42 34 34 50C26 66 26 78 34 100H100Z'/%3E%3C/svg%3E");
+}
+
+.home-material__primary img {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H90C84 22 84 34 90 50C96 66 96 78 90 100H0Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H90C84 22 84 34 90 50C96 66 96 78 90 100H0Z'/%3E%3C/svg%3E");
+}
