@@ -2,9 +2,10 @@
   const root = document.querySelector('[data-tao-4d]');
   if (!root) return;
 
+  const frameElement = root.querySelector('.tao-4d-field__frame');
   const canvas = root.querySelector('canvas');
   const context = canvas?.getContext('2d');
-  if (!canvas || !context) return;
+  if (!frameElement || !canvas || !context) return;
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const pointer = { x: 0, y: 0 };
@@ -77,7 +78,7 @@
   }
 
   function resize() {
-    const bounds = root.getBoundingClientRect();
+    const bounds = frameElement.getBoundingClientRect();
     width = Math.max(1, bounds.width);
     height = Math.max(1, bounds.height);
     pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
@@ -204,7 +205,7 @@
   }
 
   root.addEventListener('pointermove', (event) => {
-    const bounds = root.getBoundingClientRect();
+    const bounds = frameElement.getBoundingClientRect();
     pointer.x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
     pointer.y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
   });
@@ -214,7 +215,7 @@
   });
 
   const observer = new ResizeObserver(resize);
-  observer.observe(root);
+  observer.observe(frameElement);
   resize();
 
   function animate(timestamp) {
