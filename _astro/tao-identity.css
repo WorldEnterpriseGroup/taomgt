@@ -810,3 +810,18 @@
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H86C76 22 76 34 86 50C96 66 96 78 86 100H0Z'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H86C76 22 76 34 86 50C96 66 96 78 86 100H0Z'/%3E%3C/svg%3E");
 }
+
+/* Let the surrounding page field continue through the image cutaways. */
+.sota-home-hero-art,
+.home-material__primary,
+.home-material__rail figure {
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+.sota-home-hero-art figcaption,
+.home-material__primary figcaption,
+.home-material__rail figure figcaption {
+  background: transparent !important;
+  text-shadow: 0 1px 1px color-mix(in srgb, var(--tao-yin) 38%, transparent);
+}
