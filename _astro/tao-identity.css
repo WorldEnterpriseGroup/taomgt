@@ -1,0 +1,209 @@
+:root {
+  --tao-yin: #172532;
+  --tao-yang: #d3aa5d;
+  --tao-paper: #f4f0e7;
+  --tao-muted: #66717b;
+  --tao-line: color-mix(in srgb, var(--tao-yin) 18%, transparent);
+}
+
+.logo-wrapper {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.8rem;
+}
+
+.logo-wrapper::after {
+  background: url("./tao-mark.svg") center / contain no-repeat;
+  content: "";
+  display: block;
+  flex: 0 0 2rem;
+  height: 2rem;
+  transition: transform 500ms cubic-bezier(.2,.8,.2,1);
+  width: 2rem;
+}
+
+.logo-wrapper:hover::after,
+.logo-wrapper:focus-visible::after {
+  transform: rotate(180deg);
+}
+
+.btn {
+  border-radius: 999px 1rem 999px 1rem;
+}
+
+.tao-philosophy {
+  background:
+    radial-gradient(circle at 78% 50%, color-mix(in srgb, var(--tao-yang) 16%, transparent), transparent 34%),
+    var(--tao-paper);
+  border-block: 1px solid var(--tao-line);
+  display: grid;
+  gap: clamp(2rem, 7vw, 8rem);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, .9fr);
+  overflow: hidden;
+  padding: clamp(4rem, 9vw, 9rem) max(20px, 5vw);
+  position: relative;
+}
+
+.tao-philosophy::before {
+  border: 1px solid color-mix(in srgb, var(--tao-yang) 42%, transparent);
+  border-radius: 50%;
+  content: "";
+  height: clamp(20rem, 42vw, 42rem);
+  pointer-events: none;
+  position: absolute;
+  right: -18%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(20rem, 42vw, 42rem);
+}
+
+.tao-philosophy__copy {
+  align-self: center;
+  max-width: 42rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tao-philosophy__eyebrow,
+.tao-philosophy__label,
+.tao-philosophy__pole span {
+  color: var(--tao-yang);
+  font-size: .7rem;
+  font-weight: 750;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.tao-philosophy h2 {
+  color: var(--tao-yin);
+  font-size: clamp(2.4rem, 5.2vw, 5.7rem);
+  letter-spacing: -.06em;
+  line-height: .92;
+  margin: 1.2rem 0 1.7rem;
+  max-width: 10ch;
+}
+
+.tao-philosophy__copy > p:not(.tao-philosophy__eyebrow) {
+  color: var(--tao-muted);
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  line-height: 1.65;
+  max-width: 38rem;
+}
+
+.tao-philosophy__poles {
+  border-top: 1px solid var(--tao-line);
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: clamp(2rem, 4vw, 4rem);
+  padding-top: 1rem;
+}
+
+.tao-philosophy__pole {
+  display: grid;
+  gap: .55rem;
+}
+
+.tao-philosophy__pole strong {
+  color: var(--tao-yin);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.tao-philosophy__visual {
+  align-self: center;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.tao-philosophy__visual svg {
+  display: block;
+  height: auto;
+  overflow: visible;
+  width: 100%;
+}
+
+.tao-philosophy__disc {
+  fill: var(--tao-yin);
+}
+
+.tao-philosophy__disc-light {
+  fill: var(--tao-paper);
+}
+
+.tao-philosophy__curve {
+  fill: none;
+  stroke: var(--tao-yang);
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  stroke-linecap: round;
+  stroke-width: 4;
+  animation: tao-path-draw 2.2s cubic-bezier(.2,.8,.2,1) .2s forwards;
+}
+
+.tao-philosophy__curve--quiet {
+  opacity: .22;
+  stroke: var(--tao-yin);
+  stroke-width: 1.5;
+}
+
+.tao-philosophy__label {
+  position: absolute;
+}
+
+.tao-philosophy__label--yin {
+  left: 2%;
+  top: 19%;
+}
+
+.tao-philosophy__label--yang {
+  bottom: 19%;
+  right: 2%;
+}
+
+.tao-philosophy__label--middle {
+  color: var(--tao-yin);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+@keyframes tao-path-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (max-width: 760px) {
+  .logo-wrapper::after {
+    flex-basis: 1.6rem;
+    height: 1.6rem;
+    width: 1.6rem;
+  }
+
+  .tao-philosophy {
+    grid-template-columns: 1fr;
+  }
+
+  .tao-philosophy__visual {
+    margin-inline: auto;
+    max-width: 32rem;
+    order: -1;
+  }
+
+  .tao-philosophy h2 {
+    max-width: 12ch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-wrapper::after,
+  .tao-philosophy__curve {
+    animation: none;
+    transition: none;
+  }
+
+  .tao-philosophy__curve {
+    stroke-dashoffset: 0;
+  }
+}

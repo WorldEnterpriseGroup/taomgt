@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title desc">
+  <title id="title">Tao balance mark</title>
+  <desc id="desc">A yin and yang symbol representing two complementary forces.</desc>
+  <circle cx="50" cy="50" r="48" fill="#172532"/>
+  <path fill="#f4f0e7" d="M50 2a48 48 0 0 1 0 96 24 24 0 0 1 0-48 24 24 0 0 0 0-48Z"/>
+  <circle cx="50" cy="26" r="6" fill="#172532"/>
+  <circle cx="50" cy="74" r="6" fill="#f4f0e7"/>
+</svg>
