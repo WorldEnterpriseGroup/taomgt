@@ -746,3 +746,15 @@
   .tao-sequence__tao-label--dark { left: 10%; }
   .tao-sequence__tao-label--light { right: 10%; }
 }
+
+/* Keep the calm wave, but preserve the full photographic field */
+.sota-home-hero-art,
+.home-material__rail figure {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M100 0H24C12 28 12 72 24 100H100Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M100 0H24C12 28 12 72 24 100H100Z'/%3E%3C/svg%3E");
+}
+
+.home-material__primary {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H76C88 28 88 72 76 100H0Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H76C88 28 88 72 76 100H0Z'/%3E%3C/svg%3E");
+}
