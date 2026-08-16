@@ -1,0 +1,20 @@
+:root {
+  --site-side-gutter: 20px;
+}
+
+.container,
+.container-2xl {
+  width: 100% !important;
+  max-width: none !important;
+  padding-inline: var(--site-side-gutter) !important;
+  margin-inline: auto !important;
+}
+
+[class*="container"] {
+  padding-inline: var(--site-side-gutter) !important;
+}
+
+.home-three main,
+.home-three .header-three {
+  padding-inline: var(--site-side-gutter) !important;
+}
