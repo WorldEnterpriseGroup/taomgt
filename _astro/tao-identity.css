@@ -792,3 +792,21 @@
 .sota-home-hero-art,
 .home-material__primary { border-radius: 0; }
 .home-material__rail figure img { border-radius: 2rem .35rem 2rem .35rem; }
+
+/* Softer middle-path edge: quieter curve, transparent image containers. */
+.sota-home-hero-art,
+.home-material__primary,
+.home-material__rail figure {
+  background: transparent;
+  box-shadow: none;
+}
+
+.sota-home-hero-art img {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M100 0H30C42 22 42 34 30 50C18 66 18 78 30 100H100Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M100 0H30C42 22 42 34 30 50C18 66 18 78 30 100H100Z'/%3E%3C/svg%3E");
+}
+
+.home-material__primary img {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H86C76 22 76 34 86 50C96 66 96 78 86 100H0Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H86C76 22 76 34 86 50C96 66 96 78 86 100H0Z'/%3E%3C/svg%3E");
+}
