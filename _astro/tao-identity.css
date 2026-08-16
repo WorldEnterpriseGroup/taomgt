@@ -758,3 +758,37 @@
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H76C88 28 88 72 76 100H0Z'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H76C88 28 88 72 76 100H0Z'/%3E%3C/svg%3E");
 }
+
+/* One calm Tao middle-path S on the primary images only. Keep captions unmasked. */
+.sota-home-hero-art,
+.home-material__primary,
+.home-material__rail figure {
+  -webkit-mask-image: none;
+  mask-image: none;
+  overflow: visible;
+}
+
+.sota-home-hero-art img,
+.home-material__primary img {
+  border-radius: 3rem .5rem 3rem .5rem;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 100% 100%;
+}
+
+.sota-home-hero-art img {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M100 0H20C39 18 39 32 20 50C1 68 1 82 20 100H100Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M100 0H20C39 18 39 32 20 50C1 68 1 82 20 100H100Z'/%3E%3C/svg%3E");
+}
+
+.home-material__primary img {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H80C61 18 61 32 80 50C99 68 99 82 80 100H0Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H80C61 18 61 32 80 50C99 68 99 82 80 100H0Z'/%3E%3C/svg%3E");
+}
+
+.sota-home-hero-art,
+.home-material__primary { border-radius: 0; }
+.home-material__rail figure img { border-radius: 2rem .35rem 2rem .35rem; }
