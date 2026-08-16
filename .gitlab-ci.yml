@@ -6,6 +6,10 @@ pages:
   script:
     - mkdir -p public
     - find . -mindepth 1 -maxdepth 1 ! -name public ! -name .git ! -name .gitlab-ci.yml -exec cp -a {} public/ \;
+    - PAGES_BASE="$(printf '%s\n' "${CI_PAGES_URL:-}" | sed -E 's#https?://[^/]+##; s#/$##')"
+    - test -n "$PAGES_BASE" || PAGES_BASE="/${CI_PROJECT_NAME}"
+    - find public -type f -name '*.html' -exec sed -i -E "s#(href|src|srcset|action|poster)=\"/([^/])#\1=\"${PAGES_BASE}/\2#g" {} +
+    - find public -type f -name '*.css' -exec sed -i -E "s#url\(/([^/])#url(${PAGES_BASE}/\1#g" {} +
   artifacts:
     paths:
       - public
