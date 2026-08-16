@@ -9,6 +9,7 @@ pages:
     - PAGES_BASE="$(printf '%s\n' "${CI_PAGES_URL:-}" | sed -E 's#https?://[^/]+##; s#/$##')"
     - test -n "$PAGES_BASE" || PAGES_BASE="/${CI_PROJECT_NAME}"
     - find public -type f -name '*.html' -exec sed -i -E "s#(href|src|srcset|action|poster)=\"/([^/])#\1=\"${PAGES_BASE}/\2#g" {} +
+    - find public -type f -name '*.html' -exec sed -i -E "s#([[:space:],\"'])/_astro/#\1${PAGES_BASE}/_astro/#g" {} +
     - find public -type f -name '*.css' -exec sed -i -E "s#url\(/([^/])#url(${PAGES_BASE}/\1#g" {} +
   artifacts:
     paths:
