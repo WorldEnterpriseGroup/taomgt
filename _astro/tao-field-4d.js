@@ -11,6 +11,7 @@
   const pointer = { x: 0, y: 0 };
   const palette = {
     ink: [23, 37, 50],
+    black: [3, 5, 7],
     gold: [211, 170, 93],
     light: [235, 218, 180],
     paper: [244, 240, 231],
@@ -52,7 +53,7 @@
   }
 
   // Uniform samples on S3, the unit 3-sphere embedded in four dimensions.
-  for (let index = 0; index < 960; index += 1) {
+  for (let index = 0; index < 1800; index += 1) {
     let sample = { x: 0, y: 0, z: 0, w: 0 };
     let length = 0;
     while (length < 0.2 || length > 1.7) {
@@ -70,7 +71,7 @@
       ...point,
       // A continuous field, rather than a hard black/white split.
       yinWeight: (Math.tanh(field * 4.5) + 1) * 0.5,
-      size: 0.5 + random() * 1.35,
+      size: 0.72 + random() * 1.45,
       phase: random() * Math.PI * 2,
     });
   }
@@ -356,7 +357,7 @@
         const release = (progress - 0.42) / 0.58;
         flow = slerp4(darkMouth, nextTarget, release * release * (3 - release * 2));
       }
-      drawParticle(scatterOnSphere(flow, progress, lane + 80, time), palette.ink, 0.48, 1.05, time);
+        drawParticle(scatterOnSphere(flow, progress, lane + 80, time), palette.black, 0.82, 1.25, time);
     }
     context.restore();
   }
@@ -380,8 +381,8 @@
     const core = context.createRadialGradient(projected.x - radius * 0.28, projected.y - radius * 0.34, 0, projected.x, projected.y, radius);
     if (isDarkMouth) {
       core.addColorStop(0, '#324b5b');
-      core.addColorStop(0.28, rgba(palette.ink, 0.98));
-      core.addColorStop(0.72, rgba(palette.ink, 0.98));
+      core.addColorStop(0.28, rgba(palette.black, 0.99));
+      core.addColorStop(0.72, rgba(palette.black, 0.99));
       core.addColorStop(1, rgba(accent, 0.18));
     } else {
       core.addColorStop(0, '#fffdf8');
@@ -412,11 +413,15 @@
 
     projectedPoints.forEach(({ point, projected }) => {
       const pulse = 0.86 + Math.sin(time * 0.8 + point.phase) * 0.14;
-      const alpha = clamp((0.14 + projected.perspective * 0.28) * pulse, 0.08, 0.58);
-      const color = mixColor(palette.gold, palette.ink, point.yinWeight);
+      const isYin = point.yinWeight >= 0.5;
+      const alpha = isYin
+        ? clamp(0.9 + projected.perspective * 0.08, 0.9, 1)
+        : clamp((0.16 + projected.perspective * 0.22) * pulse, 0.1, 0.42);
+      const color = isYin ? palette.black : palette.light;
       context.fillStyle = rgba(color, alpha);
       context.beginPath();
-      context.arc(projected.x, projected.y, point.size * projected.perspective, 0, Math.PI * 2);
+      const radius = isYin ? point.size * 1.22 * projected.perspective : point.size * projected.perspective;
+      context.arc(projected.x, projected.y, radius, 0, Math.PI * 2);
       context.fill();
     });
 
