@@ -12,6 +12,7 @@
   const palette = {
     ink: [23, 37, 50],
     gold: [211, 170, 93],
+    light: [235, 218, 180],
     paper: [244, 240, 231],
   };
   const points = [];
@@ -64,11 +65,11 @@
       length = Math.hypot(sample.x, sample.y, sample.z, sample.w);
     }
     const point = normalize4(sample);
-    const field = point.y - 0.38 * Math.sin(Math.PI * point.x) * (0.82 + point.w * 0.18);
+    const field = point.y - 0.42 * Math.sin(Math.PI * point.x);
     points.push({
       ...point,
       // A continuous field, rather than a hard black/white split.
-      yinWeight: (Math.tanh(field * 5) + 1) * 0.5,
+      yinWeight: (Math.tanh(field * 4.5) + 1) * 0.5,
       size: 0.5 + random() * 1.35,
       phase: random() * Math.PI * 2,
     });
@@ -223,6 +224,38 @@
     });
   }
 
+  function middlePathPoint(progress) {
+    const angle = Math.PI * progress;
+    const turn = Math.PI * 2 * progress;
+    return normalize4({
+      // One calm S-curve embedded in S3, not a repeated wave.
+      x: Math.sin(turn) * 0.34,
+      y: Math.cos(angle),
+      z: Math.sin(angle) * Math.cos(turn) * 0.13,
+      w: Math.sin(angle) * Math.sin(turn) * 0.13,
+    });
+  }
+
+  function drawMiddlePath(time, scale, centerX, centerY) {
+    context.save();
+    context.globalCompositeOperation = 'lighter';
+    context.shadowColor = rgba(palette.gold, 0.18);
+    context.shadowBlur = 7;
+    for (let pass = 0; pass < 3; pass += 1) {
+      context.beginPath();
+      for (let step = 0; step <= 64; step += 1) {
+        const progress = step / 64;
+        const projected = project(middlePathPoint(progress), time, scale, centerX, centerY);
+        if (step === 0) context.moveTo(projected.x, projected.y);
+        else context.lineTo(projected.x, projected.y);
+      }
+      context.strokeStyle = pass === 1 ? rgba(palette.gold, 0.28) : rgba(palette.ink, 0.08);
+      context.lineWidth = pass === 1 ? 1.05 : 0.55;
+      context.stroke();
+    }
+    context.restore();
+  }
+
   function drawAttractorHalo(seed, time, scale, centerX, centerY) {
     const projected = project(seed, time, scale, centerX, centerY);
     const radius = scale * 0.22 * projected.perspective;
@@ -304,7 +337,7 @@
       for (let trail = 0; trail < 4; trail += 1) {
         const trailProgress = (progress - trail * 0.018 + 1) % 1;
         const flow = scatterOnSphere(slerp4(lightMouth, target, trailProgress * trailProgress * (3 - trailProgress * 2)), trailProgress, lane, time);
-        drawParticle(flow, palette.paper, 0.32 - trail * 0.055, 1.25 - trail * 0.12, time);
+        drawParticle(flow, palette.light, 0.36 - trail * 0.06, 1.3 - trail * 0.12, time);
       }
     }
 
@@ -331,7 +364,8 @@
   function drawSeed(seed, time, scale, centerX, centerY) {
     const projected = project(seed, time, scale, centerX, centerY);
     const radius = scale * 0.052 * projected.perspective;
-    const accent = seed.kind === 'yin' ? palette.gold : palette.paper;
+    const isDarkMouth = seed.kind === 'yin';
+    const accent = isDarkMouth ? palette.gold : palette.light;
 
     context.save();
     context.globalCompositeOperation = 'lighter';
@@ -344,10 +378,17 @@
     }
     context.globalCompositeOperation = 'source-over';
     const core = context.createRadialGradient(projected.x - radius * 0.28, projected.y - radius * 0.34, 0, projected.x, projected.y, radius);
-    core.addColorStop(0, '#324b5b');
-    core.addColorStop(0.28, rgba(palette.ink, 0.98));
-    core.addColorStop(0.72, rgba(palette.ink, 0.98));
-    core.addColorStop(1, rgba(accent, 0.18));
+    if (isDarkMouth) {
+      core.addColorStop(0, '#324b5b');
+      core.addColorStop(0.28, rgba(palette.ink, 0.98));
+      core.addColorStop(0.72, rgba(palette.ink, 0.98));
+      core.addColorStop(1, rgba(accent, 0.18));
+    } else {
+      core.addColorStop(0, '#fffdf8');
+      core.addColorStop(0.3, rgba(palette.paper, 0.98));
+      core.addColorStop(0.72, rgba(palette.light, 0.98));
+      core.addColorStop(1, rgba(palette.gold, 0.42));
+    }
     context.fillStyle = core;
     context.beginPath();
     context.arc(projected.x, projected.y, radius, 0, Math.PI * 2);
@@ -363,7 +404,7 @@
 
     seeds.forEach((seed) => drawAttractorHalo(seed, time, scale, centerX, centerY));
     drawHypersphereGuides(time, scale, centerX, centerY);
-    drawEnergyStreams(time, scale, centerX, centerY);
+    drawMiddlePath(time, scale, centerX, centerY);
 
     const projectedPoints = points
       .map((point) => ({ point, projected: project(point, time, scale, centerX, centerY) }))
