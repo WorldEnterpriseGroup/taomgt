@@ -49,6 +49,8 @@
   width: clamp(20rem, 42vw, 42rem);
 }
 
+.tao-philosophy::before { display: none; }
+
 .tao-philosophy__copy {
   align-self: center;
   max-width: 42rem;
