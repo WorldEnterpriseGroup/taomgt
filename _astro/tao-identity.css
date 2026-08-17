@@ -845,7 +845,9 @@
 
 /* Scientific 4D Tao field */
 .tao-4d-field {
+  align-self: center;
   min-height: clamp(24rem, 36vw, 33rem);
+  min-width: 0;
   position: relative;
   display: block;
   overflow: visible;
@@ -901,7 +903,7 @@
 .tao-4d-field__fallback { max-width: 19rem; margin: .9rem auto 0; color: var(--tao-muted); font-size: .75rem; line-height: 1.45; text-align: center; }
 
 @media (max-width: 760px) {
-  .tao-4d-field { min-height: 23rem; }
+  .tao-4d-field { min-height: 23rem; margin-inline: auto; max-width: 32rem; order: -1; }
   .tao-4d-field__frame { width: min(100%, 25rem); }
   .tao-4d-field__hud,
   .tao-4d-field__legend { right: .7rem; left: .7rem; font-size: .5rem; }
