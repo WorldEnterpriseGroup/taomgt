@@ -225,38 +225,6 @@
     });
   }
 
-  function middlePathPoint(progress) {
-    const angle = Math.PI * progress;
-    const turn = Math.PI * 2 * progress;
-    return normalize4({
-      // One calm S-curve embedded in S3, not a repeated wave.
-      x: Math.sin(turn) * 0.34,
-      y: Math.cos(angle),
-      z: Math.sin(angle) * Math.cos(turn) * 0.13,
-      w: Math.sin(angle) * Math.sin(turn) * 0.13,
-    });
-  }
-
-  function drawMiddlePath(time, scale, centerX, centerY) {
-    context.save();
-    context.globalCompositeOperation = 'lighter';
-    context.shadowColor = rgba(palette.gold, 0.18);
-    context.shadowBlur = 7;
-    for (let pass = 0; pass < 3; pass += 1) {
-      context.beginPath();
-      for (let step = 0; step <= 64; step += 1) {
-        const progress = step / 64;
-        const projected = project(middlePathPoint(progress), time, scale, centerX, centerY);
-        if (step === 0) context.moveTo(projected.x, projected.y);
-        else context.lineTo(projected.x, projected.y);
-      }
-      context.strokeStyle = pass === 1 ? rgba(palette.gold, 0.28) : rgba(palette.ink, 0.08);
-      context.lineWidth = pass === 1 ? 1.05 : 0.55;
-      context.stroke();
-    }
-    context.restore();
-  }
-
   function drawAttractorHalo(seed, time, scale, centerX, centerY) {
     const projected = project(seed, time, scale, centerX, centerY);
     const radius = scale * 0.22 * projected.perspective;
@@ -404,8 +372,6 @@
     const scale = Math.min(width, height) * 0.41;
 
     seeds.forEach((seed) => drawAttractorHalo(seed, time, scale, centerX, centerY));
-    drawHypersphereGuides(time, scale, centerX, centerY);
-    drawMiddlePath(time, scale, centerX, centerY);
 
     const projectedPoints = points
       .map((point) => ({ point, projected: project(point, time, scale, centerX, centerY) }))
@@ -413,14 +379,14 @@
 
     projectedPoints.forEach(({ point, projected }) => {
       const pulse = 0.86 + Math.sin(time * 0.8 + point.phase) * 0.14;
-      const isYin = point.yinWeight >= 0.5;
-      const alpha = isYin
+      const yinDensity = clamp((point.yinWeight - 0.43) / 0.14, 0, 1);
+      const alpha = yinDensity > 0.86
         ? clamp(0.9 + projected.perspective * 0.08, 0.9, 1)
-        : clamp((0.16 + projected.perspective * 0.22) * pulse, 0.1, 0.42);
-      const color = isYin ? palette.black : palette.light;
+        : clamp((0.16 + projected.perspective * 0.24) * pulse + yinDensity * 0.5, 0.1, 0.95);
+      const color = mixColor(palette.light, palette.black, yinDensity);
       context.fillStyle = rgba(color, alpha);
       context.beginPath();
-      const radius = isYin ? point.size * 1.22 * projected.perspective : point.size * projected.perspective;
+      const radius = point.size * (1 + yinDensity * 0.22) * projected.perspective;
       context.arc(projected.x, projected.y, radius, 0, Math.PI * 2);
       context.fill();
     });
