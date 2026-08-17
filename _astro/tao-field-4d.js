@@ -79,6 +79,8 @@
     { x: 0, y: 1, z: 0, w: 0, kind: 'yin' },
     { x: 0, y: -1, z: 0, w: 0, kind: 'yang' },
   ];
+  const lightTargets = points.filter((point) => point.yinWeight < 0.42);
+  const darkTargets = points.filter((point) => point.yinWeight > 0.58);
 
   function rotate(a, b, angle) {
     const cosine = Math.cos(angle);
@@ -172,6 +174,55 @@
     });
   }
 
+  function dot4(first, second) {
+    return first.x * second.x + first.y * second.y + first.z * second.z + first.w * second.w;
+  }
+
+  function slerp4(start, end, amount) {
+    const dot = clamp(dot4(start, end), -1, 1);
+    if (Math.abs(dot) > 0.995) {
+      return normalize4({
+        x: start.x + (end.x - start.x) * amount,
+        y: start.y + (end.y - start.y) * amount,
+        z: start.z + (end.z - start.z) * amount,
+        w: start.w + (end.w - start.w) * amount,
+      });
+    }
+    const angle = Math.acos(dot);
+    const sine = Math.sin(angle);
+    const startWeight = Math.sin((1 - amount) * angle) / sine;
+    const endWeight = Math.sin(amount * angle) / sine;
+    return normalize4({
+      x: start.x * startWeight + end.x * endWeight,
+      y: start.y * startWeight + end.y * endWeight,
+      z: start.z * startWeight + end.z * endWeight,
+      w: start.w * startWeight + end.w * endWeight,
+    });
+  }
+
+  function scatterOnSphere(point, amount, lane, time) {
+    const candidate = {
+      x: Math.sin(time * 0.41 + lane * 1.7),
+      y: Math.cos(time * 0.37 + lane * 1.1),
+      z: Math.sin(time * 0.29 + lane * 0.8),
+      w: Math.cos(time * 0.23 + lane * 1.4),
+    };
+    const projection = dot4(point, candidate);
+    const tangent = normalize4({
+      x: candidate.x - point.x * projection,
+      y: candidate.y - point.y * projection,
+      z: candidate.z - point.z * projection,
+      w: candidate.w - point.w * projection,
+    });
+    const spread = Math.sin(Math.PI * amount) * (0.035 + (lane % 5) * 0.009);
+    return normalize4({
+      x: point.x + tangent.x * spread,
+      y: point.y + tangent.y * spread,
+      z: point.z + tangent.z * spread,
+      w: point.w + tangent.w * spread,
+    });
+  }
+
   function drawAttractorHalo(seed, time, scale, centerX, centerY) {
     const projected = project(seed, time, scale, centerX, centerY);
     const radius = scale * 0.22 * projected.perspective;
@@ -219,6 +270,60 @@
           context.fill();
         }
       }
+    }
+    context.restore();
+  }
+
+  function drawExchangePopulation(time, scale, centerX, centerY) {
+    const lightCount = 42;
+    const darkCount = 42;
+    const lightMouth = seeds[1];
+    const darkMouth = seeds[0];
+
+    function drawParticle(point, color, alpha, radius, timeValue) {
+      const projected = project(point, timeValue, scale, centerX, centerY);
+      const size = radius * projected.perspective;
+      const glow = context.createRadialGradient(projected.x, projected.y, 0, projected.x, projected.y, size * 5);
+      glow.addColorStop(0, rgba(color, alpha));
+      glow.addColorStop(0.2, rgba(color, alpha * 0.3));
+      glow.addColorStop(1, rgba(color, 0));
+      context.fillStyle = glow;
+      context.beginPath();
+      context.arc(projected.x, projected.y, size * 5, 0, Math.PI * 2);
+      context.fill();
+    }
+
+    context.save();
+    context.globalCompositeOperation = 'lighter';
+
+    // Light is released from the Yang mouth and scatters into the light field.
+    for (let lane = 0; lane < lightCount; lane += 1) {
+      const progress = (time * 0.045 + lane / lightCount) % 1;
+      const targetIndex = (Math.floor(time * 0.035) + lane * 11) % lightTargets.length;
+      const target = lightTargets[targetIndex];
+      for (let trail = 0; trail < 4; trail += 1) {
+        const trailProgress = (progress - trail * 0.018 + 1) % 1;
+        const flow = scatterOnSphere(slerp4(lightMouth, target, trailProgress * trailProgress * (3 - trailProgress * 2)), trailProgress, lane, time);
+        drawParticle(flow, palette.paper, 0.32 - trail * 0.055, 1.25 - trail * 0.12, time);
+      }
+    }
+
+    // Dark is gathered from the dark field, swallowed by Yin, then released again.
+    for (let lane = 0; lane < darkCount; lane += 1) {
+      const progress = (time * 0.041 + lane / darkCount + 0.18) % 1;
+      const targetIndex = (Math.floor(time * 0.035) + lane * 7) % darkTargets.length;
+      const nextTargetIndex = (targetIndex + 17) % darkTargets.length;
+      const target = darkTargets[targetIndex];
+      const nextTarget = darkTargets[nextTargetIndex];
+      let flow;
+      if (progress < 0.42) {
+        const inhale = progress / 0.42;
+        flow = slerp4(target, darkMouth, inhale * inhale * (3 - inhale * 2));
+      } else {
+        const release = (progress - 0.42) / 0.58;
+        flow = slerp4(darkMouth, nextTarget, release * release * (3 - release * 2));
+      }
+      drawParticle(scatterOnSphere(flow, progress, lane + 80, time), palette.ink, 0.48, 1.05, time);
     }
     context.restore();
   }
@@ -274,6 +379,7 @@
       context.fill();
     });
 
+    drawExchangePopulation(time, scale, centerX, centerY);
     seeds.forEach((seed) => drawSeed(seed, time, scale, centerX, centerY));
   }
 
