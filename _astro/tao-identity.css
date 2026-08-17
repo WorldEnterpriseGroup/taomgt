@@ -910,3 +910,82 @@
   .tao-4d-field__hud,
   .tao-4d-field__legend { right: .7rem; left: .7rem; font-size: .5rem; }
 }
+
+/* Enterprise operating-method map: a practical counterpoint to the single Tao field */
+.tao-sequence__method-map {
+  position: absolute;
+  inset: 8% 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+  gap: 0 2.5rem;
+  min-height: 27rem;
+  padding: 1rem 0;
+}
+
+.tao-sequence__method-map-header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  color: var(--tao-muted);
+  font-size: .58rem;
+  font-weight: 750;
+  letter-spacing: .15em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.tao-sequence__method-map-header span:last-child { color: var(--tao-yang); }
+
+.tao-sequence__method {
+  display: grid;
+  gap: .42rem;
+  align-content: start;
+  min-height: 7rem;
+  padding: 1rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--tao-yin) 20%, transparent);
+}
+
+.tao-sequence__method span {
+  color: var(--tao-yang);
+  font-size: .58rem;
+  font-weight: 750;
+  letter-spacing: .13em;
+  line-height: 1.3;
+}
+
+.tao-sequence__method strong {
+  color: var(--tao-yin);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  line-height: 1.05;
+}
+
+.tao-sequence__method small {
+  max-width: 22rem;
+  color: var(--tao-muted);
+  font-size: .78rem;
+  line-height: 1.45;
+}
+
+.tao-sequence__method:last-child {
+  grid-column: 1 / -1;
+  width: 52%;
+  justify-self: center;
+}
+
+@media (max-width: 760px) {
+  .tao-sequence__method-map {
+    position: relative;
+    inset: auto;
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: 0;
+    padding: 1rem 0 0;
+  }
+
+  .tao-sequence__method-map-header { margin-bottom: 1rem; }
+  .tao-sequence__method { min-height: 0; }
+  .tao-sequence__method:last-child { grid-column: auto; width: auto; }
+}
