@@ -858,6 +858,13 @@
 .tao-4d-field::before,
 .tao-4d-field::after { display: none; }
 
+.tao-philosophy__visual.tao-4d-field::before,
+.tao-philosophy__visual.tao-4d-field::after {
+  content: none;
+  display: none !important;
+  border: 0;
+}
+
 .tao-4d-field__frame {
   position: relative;
   width: min(100%, 33rem);
